@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "LURN-backend",
   "scripts": {
     "dev": "wrangler dev --port 3000",
     "deploy": "wrangler deploy --minify"
