@@ -4,7 +4,7 @@ const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80vh;
+  height: 88vh;
   padding: 0 5rem;
   background-color: black;
   color: white;
