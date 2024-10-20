@@ -1,9 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import TypewriterPage from "./TypeWrite.jsx";
 import SearchBar from "./SearchBar.jsx";
 import Carousel from "./Carousel.jsx";
 
 const Welcome = () => {
+    const navigate = useNavigate();
+
+    React.useEffect(()=>{
+        if(localStorage.getItem("token") === null){
+            navigate("/signup");
+        }
+    },[])
     return (
         <div className="min-h-screen w-full  bg-[#212121] text-center ">
             <div className="p-20">
