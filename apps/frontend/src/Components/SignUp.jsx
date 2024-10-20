@@ -76,15 +76,55 @@ const GoBack = styled.a`
 `;
 
 const SignUp = () => {
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const onclickHandler = async () => {
+    const res = await fetch(
+      `${import.meta.env.VITE_REACT_APP_API_URL}/api/v1/auth/signup`,
+      {
+           method: 'POST',
+           body: JSON.stringify({
+                name: "test",
+                email,
+                password,
+           }),
+      }
+    );
+    const data = await res.json();
+    if (!data.token) {
+      showError(data.message);
+    } else {
+      localStorage.setItem('token', data.token);``
+    }
+  }
   return (
     <Container>
       <FormWrapper>
         <Logo>Logo</Logo>
         <h2>Create your account</h2>
         <form>
-          <Input type="email" placeholder="Email" />
-          <Input type="password" placeholder="Password" />
-          <ContinueButton to="/welcome">Continue</ContinueButton>
+          <Input 
+            type="email" 
+            placeholder="Email"
+            onChange={(e) => {
+                  setEmail(
+                      e.target.value
+                  );
+            }}
+          />
+          <Input 
+            type="password" 
+            placeholder="Password" 
+            onChange={(e) => {
+                  setPassword(
+                      e.target.value
+                  );
+            }}
+          />
+          <ContinueButton 
+            onClick={onclickHandler}
+          >Continue</ContinueButton>
         </form>
         <GoBack href="/">Go Back</GoBack>
       </FormWrapper>

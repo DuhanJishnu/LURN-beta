@@ -1,12 +1,13 @@
 import { Hono } from 'hono';
 import { PrismaClient } from '@prisma/client/edge';
 import { withAccelerate } from '@prisma/extension-accelerate';
+import { sign } from 'hono/jwt';
 
 import { CreateUserSchema } from '../../zod/schema';
 
 const authRoutes = new Hono();
 
-authRoutes.post('/signin', async (c) => {
+authRoutes.post('/signup', async (c) => {
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate());
@@ -40,9 +41,17 @@ authRoutes.post('/signin', async (c) => {
         const res = await prisma.user.create({
             data: body,
         });
+        const secret = c.env.JWT_SECRET;
+
+        const token = await sign({
+            name: body.name,
+            email: body.email,
+        }, secret);
+
         return c.json(
             {
                 message: 'Created User',
+                token,
             },
             200
         );
