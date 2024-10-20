@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -46,7 +47,7 @@ const Input = styled.input`
   font-size: 1.2rem;
 `;
 
-const ContinueButton = styled.button`
+const ContinueButton = styled(Link)`
   background-color: #00b894;
   color: white;
   padding: 1rem 2rem;
@@ -83,7 +84,7 @@ const SignUp = () => {
         <form>
           <Input type="email" placeholder="Email" />
           <Input type="password" placeholder="Password" />
-          <ContinueButton>Continue</ContinueButton>
+          <ContinueButton to="/welcome">Continue</ContinueButton>
         </form>
         <GoBack href="/">Go Back</GoBack>
       </FormWrapper>
