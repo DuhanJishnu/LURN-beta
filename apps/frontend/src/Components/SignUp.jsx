@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -116,6 +116,7 @@ const SignUp = () => {
   const [username, setUsername] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const navigate = useNavigate();
 
   const onclickHandler = async () => {
     const res = await fetch(
@@ -123,7 +124,7 @@ const SignUp = () => {
       {
            method: 'POST',
            body: JSON.stringify({
-                username,
+                name,
                 email,
                 password,
            }),
@@ -133,7 +134,8 @@ const SignUp = () => {
     if (!data.token) {
       showError(data.message);
     } else {
-      localStorage.setItem('token', data.token);``
+      navigate("../welcome");
+      localStorage.setItem('token', data.token);
     }
   }
   return (
@@ -141,7 +143,6 @@ const SignUp = () => {
       <FormWrapper>
         <Logo>Logo</Logo>
         <h2>Create your account</h2>
-        <form>
           <Input 
             type="username" 
             placeholder="Username" 
@@ -171,10 +172,8 @@ const SignUp = () => {
           />
           <button 
             className="mt-5 bg-[#00b894]" 
-            to="/welcome"
             onClick={onclickHandler}
             >Continue</button>
-        </form>
         <GoBack href="/">Go Back</GoBack>
       </FormWrapper>
     </Container>
