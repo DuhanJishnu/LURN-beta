@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -76,6 +76,7 @@ const Logo = styled.div`
 `;
 
 const Header = () => {
+    const location = useLocation();
     return (
         <Nav>
             <Logo>Logo</Logo>
@@ -85,7 +86,7 @@ const Header = () => {
                 <a href="/about_us">About Us</a>
                 <a href="/contact">Contact</a>
             </NavLinks>
-            <SignUpButton to="/signup">Sign Up</SignUpButton>
+            {(location.pathname.includes("signup"))? <div></div> : <SignUpButton to="/signup">Sign Up</SignUpButton>}
         </Nav>
     );
 };
