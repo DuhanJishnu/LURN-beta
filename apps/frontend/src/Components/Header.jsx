@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -75,8 +75,41 @@ const Logo = styled.div`
     font-weight: bold;
 `;
 
+const LogOutButton = styled.button`
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+
+    //added later
+    &:hover {
+        background-color: green;
+        color: white;
+        animation: zoom 1.2s ease infinite;
+        animation: prop 0.2s ease 1;
+    }
+
+    @keyframes prop {
+        from {
+            background-color: white;
+        }
+        to {
+            background-color: green;
+            color: white;
+        }
+    }
+`;
+
 const Header = () => {
-    const location = useLocation();
+    const navigate = useNavigate();
+
+    const onclickHandler = () => {
+        localStorage.removeItem("token");
+        navigate("../auth");
+    }
+    
     return (
         <Nav>
             <Logo>Logo</Logo>
@@ -86,7 +119,12 @@ const Header = () => {
                 <a href="/about_us">About Us</a>
                 <a href="/contact">Contact</a>
             </NavLinks>
-            {(location.pathname.includes("signup"))? <div></div> : <SignUpButton to="/signup">Sign Up</SignUpButton>}
+            {
+                localStorage.getItem("token") ? 
+                    <LogOutButton onClick={onclickHandler}>Log Out</LogOutButton>
+                : 
+                    <SignUpButton to="/auth">Sign Up</SignUpButton>
+            }
         </Nav>
     );
 };
