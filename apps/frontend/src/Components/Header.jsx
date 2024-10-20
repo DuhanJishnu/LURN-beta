@@ -36,7 +36,7 @@ const Header = () => {
     <Nav>
       <Logo>Logo</Logo>
       <NavLinks>
-        <a href="#">Home</a>
+        <a href="/">Home</a>
         <a href="#">Our Vision</a>
         <a href="#">About Us</a>
         <a href="#">Contact</a>
