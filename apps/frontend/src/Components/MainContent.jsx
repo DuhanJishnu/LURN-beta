@@ -32,6 +32,26 @@ const StartButton = styled(Link)`
   font-weight: bold;
   border-radius: 5px;
   margin-top: 2rem;
+
+   
+   
+
+  &:hover {
+  background-color: green;
+  color: white;
+  animation:prop 0.2s ease 1;
+   
+  }
+
+  @keyframes prop{
+    from{
+    background-color:white;
+    }
+    to{
+    background-color:green;
+    color:white;
+    }
+  }
 `;
 
 const MainContent = () => {
@@ -58,3 +78,4 @@ const MainContent = () => {
 };
 
 export default MainContent;
+

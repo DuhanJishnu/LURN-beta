@@ -14,12 +14,57 @@ const Container = styled.div`
 
 const FormWrapper = styled.div`
   background-color: black;
-  border: 2px solid white;
-  border-radius: 10px;
+  // border: 2px solid white;
+  // border-radius: 10px;
   padding: 2rem 4rem;
   text-align: center;
   max-width: 400px;
   width: 100%;
+
+
+  //updated from here
+
+--border-angle: 0turn; 
+  --main-bg: conic-gradient(
+      from var(--border-angle),
+      black,
+      black 0.3%,
+      black 60%,
+      black 95%
+    );
+  
+  border: solid 3px transparent;
+  border-radius: 2em;
+  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, white, black 100%, transparent);
+  
+  background: 
+   
+    var(--main-bg) padding-box,
+    var(--gradient-border) border-box, 
+    var(--main-bg) border-box;
+  
+  background-position: center center;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+//if want to pause animation on hovering
+  // &:hover {
+  //   animation-play-state: paused;
+  // }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+
+
 `;
 
 const Logo = styled.div`
@@ -41,7 +86,7 @@ const Input = styled.input`
   color: white;
   border: 2px solid white;
   border-radius: 5px;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   margin: 1rem 0;
   font-size: 1.2rem;
