@@ -19,7 +19,6 @@ const IntroText = styled.div`
 `;
 
 
-
 const LurnSection = styled.div`
   text-align: left;
   font-size: 1.5rem;
