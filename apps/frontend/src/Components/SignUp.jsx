@@ -14,15 +14,12 @@ const Container = styled.div`
 
 const FormWrapper = styled.div`
   background-color: black;
-  // border: 2px solid white;
-  // border-radius: 10px;
   padding: 2rem 4rem;
   text-align: center;
   max-width: 400px;
   width: 100%;
 
 
-  //updated from here
 
 --border-angle: 0turn; 
   --main-bg: conic-gradient(
@@ -51,10 +48,6 @@ const FormWrapper = styled.div`
       --border-angle: 1turn;
     }
   }
-//if want to pause animation on hovering
-  // &:hover {
-  //   animation-play-state: paused;
-  // }
 }
 
 @property --border-angle {
@@ -93,7 +86,6 @@ const Input = styled.input`
 `;
 
 const ContinueButton = styled(Link)`
-  background-color: #00b894;
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -127,9 +119,10 @@ const SignUp = () => {
         <Logo>Logo</Logo>
         <h2>Create your account</h2>
         <form>
+          <Input type="username" placeholder="Username" />
           <Input type="email" placeholder="Email" />
           <Input type="password" placeholder="Password" />
-          <ContinueButton to="/welcome">Continue</ContinueButton>
+          <button className="mt-5 bg-[#00b894]" to="/welcome">Continue</button>
         </form>
         <GoBack href="/">Go Back</GoBack>
       </FormWrapper>

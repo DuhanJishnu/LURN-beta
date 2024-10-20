@@ -8,7 +8,7 @@ const Welcome = ()=>{
         <div className='min-h-screen w-full  bg-[#212121] text-center '>
             <div className='p-20'>
                 <TypewriterPage text={'Welcome to Learning Page'}/>
-                <SearchBar/>
+                <SearchBar />
                 <Carousel />
             </div>
         </div>
