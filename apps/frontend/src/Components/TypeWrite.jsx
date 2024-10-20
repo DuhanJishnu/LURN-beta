@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TypewriterPage = () => {
+const TypewriterPage = ({text}) => {
   return (
-    <div className='h-screen bg-[#212121] flex justify-center items-center'> 
+    <div className=' bg-[#212121]'> 
       <div className="inline-block p-4">  
-        <p className="text-white font-mono tracking-widest border-r-2 border-white overflow-hidden whitespace-nowrap animate-typing">
-          Welcome to Learning Page
+        <p className="text-white text-3xl font-mono tracking-widest border-r-2 border-white overflow-hidden whitespace-nowrap animate-typing">
+          {text}
         </p>
       </div>
     </div>
