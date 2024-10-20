@@ -112,6 +112,64 @@ const GoBack = styled.a`
     }
 `;
 
+const SignIn = ({setLogin}) => {
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = React.useState("");
+
+    function showError(message) {
+        setErrorMessage(message);
+    }
+
+    const onclickHandler = async () => {
+        const res = await fetch(
+            `${import.meta.env.VITE_REACT_APP_API_URL}/api/v1/auth/signin`,
+            {
+                method: "POST",
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
+            },
+        );
+        const data = await res.json();
+        if (!data.token) {
+            showError(data.message);
+        } else {
+            navigate("../welcome");
+            localStorage.setItem("token", data.token);
+        }
+    };
+    return (
+        <Container>
+            <FormWrapper>
+                <Logo>Logo</Logo>
+                <h2>Sign in to your account</h2>
+                <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Create account here</Link></u></h3>
+                <Input
+                    type="email"
+                    placeholder="Email"
+                    onChange={(e) => {
+                        setEmail(e.target.value);
+                    }}
+                />
+                <Input
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => {
+                        setPassword(e.target.value);
+                    }}
+                />
+                <button className="mt-5 bg-[#00b894]" onClick={onclickHandler}>
+                    Continue
+                </button>
+                <GoBack href="/">Go Back</GoBack>
+            </FormWrapper>
+        </Container>
+    );
+};
+
 const SignUp = () => {
     const [username, setUsername] = React.useState("");
     const [email, setEmail] = React.useState("");
@@ -148,6 +206,7 @@ const SignUp = () => {
             <FormWrapper>
                 <Logo>Logo</Logo>
                 <h2>Create your account</h2>
+                <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Login here</Link></u></h3>
                 <Input
                     type="username"
                     placeholder="Username"
@@ -178,4 +237,11 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+const Portal = () => {
+    const [login, setLogin] = React.useState(true);
+    return (<>
+        {login ? <SignIn setLogin={setLogin}/> : <SignUp setLogin={setLogin}/>}
+    </>)
+}
+
+export default Portal;
