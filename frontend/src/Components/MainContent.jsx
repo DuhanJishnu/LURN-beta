@@ -17,6 +17,7 @@ const IntroText = styled.div`
   line-height: 1.8;
 `;
 
+
 const LurnSection = styled.div`
   text-align: right;
   font-size: 1.5rem;
