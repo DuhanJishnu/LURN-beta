@@ -113,10 +113,34 @@ const GoBack = styled.a`
 `;
 
 const SignUp = () => {
+  const [username, setUsername] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
   const [errorMessage, setErrorMessage] = React.useState('');
 
   function showError(message){
     setErrorMessage(message);
+  }
+
+  const onclickHandler = async () => {
+    const res = await fetch(
+      `${import.meta.env.VITE_REACT_APP_API_URL}/api/v1/auth/signup`,
+      {
+           method: 'POST',
+           body: JSON.stringify({
+                username,
+                email,
+                password,
+           }),
+      }
+    );
+    const data = await res.json();
+    if (!data.token) {
+      showError(data.message);
+    } else {
+      localStorage.setItem('token', data.token);``
+    }
+
   }
   return (
     <Container>
@@ -124,11 +148,38 @@ const SignUp = () => {
         <Logo>Logo</Logo>
         <h2>Create your account</h2>
         <form>
-          <Input type="username" placeholder="Username" />
-          <Input type="email" placeholder="Email" />
-          <Input type="password" placeholder="Password" />
-          <div>{errorMessage}</div>
-          <button className="mt-5 bg-[#00b894]" to="/welcome">Continue</button>
+          <Input 
+            type="username" 
+            placeholder="Username" 
+            onChange={(e) => {
+                  setUsername(
+                      e.target.value
+                  );
+            }}
+          />
+          <Input 
+            type="email" 
+            placeholder="Email"
+            onChange={(e) => {
+                  setEmail(
+                      e.target.value
+                  );
+            }}
+          />
+          <Input 
+            type="password" 
+            placeholder="Password" 
+            onChange={(e) => {
+                  setPassword(
+                      e.target.value
+                  );
+            }}
+          />
+          <button 
+            className="mt-5 bg-[#00b894]" 
+            to="/welcome"
+            onClick={onclickHandler}
+            >Continue</button>
         </form>
         <GoBack href="/">Go Back</GoBack>
       </FormWrapper>
