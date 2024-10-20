@@ -5,6 +5,10 @@ import { CreateUserSchema } from '../zod/schema'
 
 const app = new Hono()
 
+app.get('/health', (c) => {
+    return c.json({ status: 'ok' })
+});
+
 app.post('/signin', async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
