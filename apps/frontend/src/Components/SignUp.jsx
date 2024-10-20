@@ -117,6 +117,11 @@ const SignUp = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = React.useState('');
+  
+  function showError(message){
+    setErrorMessage(message);
+  }
 
   const onclickHandler = async () => {
     const res = await fetch(
@@ -137,6 +142,7 @@ const SignUp = () => {
       navigate("../welcome");
       localStorage.setItem('token', data.token);
     }
+
   }
   return (
     <Container>
