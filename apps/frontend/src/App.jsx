@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header.jsx';
+import Header from './components/Header';
 import MainContent from './components/MainContent.jsx';
 import SignUp from './components/SignUp.jsx';
-import TypewriterPage from './components/TypeWrite.jsx';
+import Welcome from './components/Welcome.jsx';
 import './index.css';
 
 function App() {    
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/welcome" element={<TypewriterPage />} />
+          <Route path="/welcome" element={<Welcome />} />
         </Routes>
       </div>
     </Router>
