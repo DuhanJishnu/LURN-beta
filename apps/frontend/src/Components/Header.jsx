@@ -82,9 +82,9 @@ const Header = () => {
       <Logo>Logo</Logo>
       <NavLinks>
         <a href="/">Home</a>
-        <a href="#">Our Vision</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
+        <a href="/vision">Our Vision</a>
+        <a href="/about_us">About Us</a>
+        <a href="/contact">Contact</a>
       </NavLinks>
       <SignUpButton to="/signup">Sign Up</SignUpButton>
     </Nav>

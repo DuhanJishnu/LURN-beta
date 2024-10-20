@@ -113,6 +113,11 @@ const GoBack = styled.a`
 `;
 
 const SignUp = () => {
+  const [errorMessage, setErrorMessage] = React.useState('');
+
+  function showError(message){
+    setErrorMessage(message);
+  }
   return (
     <Container>
       <FormWrapper>
@@ -122,6 +127,7 @@ const SignUp = () => {
           <Input type="username" placeholder="Username" />
           <Input type="email" placeholder="Email" />
           <Input type="password" placeholder="Password" />
+          <div>{errorMessage}</div>
           <button className="mt-5 bg-[#00b894]" to="/welcome">Continue</button>
         </form>
         <GoBack href="/">Go Back</GoBack>
