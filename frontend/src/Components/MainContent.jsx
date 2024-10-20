@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Section = styled.section`
@@ -19,11 +20,11 @@ const IntroText = styled.div`
 
 
 const LurnSection = styled.div`
-  text-align: right;
+  text-align: left;
   font-size: 1.5rem;
 `;
 
-const StartButton = styled.button`
+const StartButton = styled(Link)`
   background-color: white;
   color: black;
   padding: 1rem 2rem;
@@ -37,19 +38,19 @@ const MainContent = () => {
   return (
     <Section>
       <IntroText>
-        <h1>Introducing LURN</h1>
-        <p>
+        <h1 className='text-7xl'>Introducing LURN</h1>
+        <p className='m-10'>
           An Artificial Intelligence platform that helps you learn with the help of GAMES that are interactive and fresh. 
           We offer infinite learning resources for our users that help them learn and grow.
         </p>
-        <StartButton>Start Learning</StartButton>
+        <StartButton to="/signup">Start Learning</StartButton>
       </IntroText>
-      <LurnSection>
-        <h1>LURN = {'{'}</h1>
-        <p>Learn,</p>
-        <p>Understand,</p>
-        <p>Reward,</p>
-        <p>Navigate</p>
+      <LurnSection className='text-4xl'>
+        <h1 className='text-4xl'>LURN = {'{'}</h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;:&nbsp;Learn,</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;U&nbsp;:&nbsp;Understand,</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;:&nbsp;Reward,</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;:&nbsp;Navigate</p>
         <h1>{'}'}</h1>
       </LurnSection>
     </Section>
