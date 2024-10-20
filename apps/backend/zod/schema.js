@@ -1,4 +1,4 @@
-import zod from 'zod';
+import zod from "zod";
 
 export const CreateUserSchema = zod.object({
     email: zod.string().email(),

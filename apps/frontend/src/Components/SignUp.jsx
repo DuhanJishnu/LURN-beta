@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link, useNavigate } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: black;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
 `;
 
 const FormWrapper = styled.div`
@@ -61,129 +61,121 @@ const FormWrapper = styled.div`
 `;
 
 const Logo = styled.div`
-  background-color: white;
-  color: black;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 2rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
 `;
 
 const Input = styled.input`
-  background-color: black;
-  color: white;
-  border: 2px solid white;
-  border-radius: 5px;
-  padding: 0.5rem;
-  width: 100%;
-  margin: 1rem 0;
-  font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 1.2rem;
 `;
 
 const ContinueButton = styled(Link)`
-  color: white;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  width: 100%;
-  margin-top: 1.5rem;
-  cursor: pointer;
-  font-weight: bold;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
 
-  &:hover {
-    background-color: #019374;
-  }
+    &:hover {
+        background-color: #019374;
+    }
 `;
 
 const GoBack = styled.a`
-  display: block;
-  margin-top: 1rem;
-  color: #00b894;
-  cursor: pointer;
+    display: block;
+    margin-top: 1rem;
+    color: #00b894;
+    cursor: pointer;
 
-  &:hover {
-    text-decoration: underline;
-  }
+    &:hover {
+        text-decoration: underline;
+    }
 `;
 
 const SignUp = () => {
-  const [username, setUsername] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = React.useState('');
-  
-  function showError(message){
-    setErrorMessage(message);
-  }
+    const [username, setUsername] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = React.useState("");
 
-  const onclickHandler = async () => {
-    const res = await fetch(
-      `${import.meta.env.VITE_REACT_APP_API_URL}/api/v1/auth/signup`,
-      {
-           method: 'POST',
-           body: JSON.stringify({
-                name,
-                email,
-                password,
-           }),
-      }
-    );
-    const data = await res.json();
-    if (!data.token) {
-      showError(data.message);
-    } else {
-      navigate("../welcome");
-      localStorage.setItem('token', data.token);
+    function showError(message) {
+        setErrorMessage(message);
     }
 
-  }
-  return (
-    <Container>
-      <FormWrapper>
-        <Logo>Logo</Logo>
-        <h2>Create your account</h2>
-          <Input 
-            type="username" 
-            placeholder="Username" 
-            onChange={(e) => {
-                  setUsername(
-                      e.target.value
-                  );
-            }}
-          />
-          <Input 
-            type="email" 
-            placeholder="Email"
-            onChange={(e) => {
-                  setEmail(
-                      e.target.value
-                  );
-            }}
-          />
-          <Input 
-            type="password" 
-            placeholder="Password" 
-            onChange={(e) => {
-                  setPassword(
-                      e.target.value
-                  );
-            }}
-          />
-          <button 
-            className="mt-5 bg-[#00b894]" 
-            onClick={onclickHandler}
-            >Continue</button>
-        <GoBack href="/">Go Back</GoBack>
-      </FormWrapper>
-    </Container>
-  );
+    const onclickHandler = async () => {
+        const res = await fetch(
+            `${import.meta.env.VITE_REACT_APP_API_URL}/api/v1/auth/signup`,
+            {
+                method: "POST",
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                }),
+            },
+        );
+        const data = await res.json();
+        if (!data.token) {
+            showError(data.message);
+        } else {
+            navigate("../welcome");
+            localStorage.setItem("token", data.token);
+        }
+    };
+    return (
+        <Container>
+            <FormWrapper>
+                <Logo>Logo</Logo>
+                <h2>Create your account</h2>
+                <Input
+                    type="username"
+                    placeholder="Username"
+                    onChange={(e) => {
+                        setUsername(e.target.value);
+                    }}
+                />
+                <Input
+                    type="email"
+                    placeholder="Email"
+                    onChange={(e) => {
+                        setEmail(e.target.value);
+                    }}
+                />
+                <Input
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => {
+                        setPassword(e.target.value);
+                    }}
+                />
+                <button className="mt-5 bg-[#00b894]" onClick={onclickHandler}>
+                    Continue
+                </button>
+                <GoBack href="/">Go Back</GoBack>
+            </FormWrapper>
+        </Container>
+    );
 };
 
 export default SignUp;

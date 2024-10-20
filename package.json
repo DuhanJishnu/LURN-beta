@@ -1,5 +1,5 @@
 {
-  "name":"LURN-beta",
+  "name": "LURN-beta",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -8,10 +8,11 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prisma_migrate": "cd apps/backend && npx prisma migrate dev",
     "prisma_generate": "cd apps/backend && npx prisma generate --no-engine",
-    "deploy-backend": "cd apps/backend && wrangler deploy --env production"
+    "deploy-backend": "cd apps/backend && wrangler deploy --env production",
+    "pretty": "prettier --write \"**/*.{js,jsx,md}\""
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.3",
     "turbo": "^2.2.1",
     "typescript": "^5.4.5"
   },
