@@ -5,3 +5,7 @@ export const CreateUserSchema = zod.object({
     name: zod.string(),
     password: zod.string().min(8),
 });
+
+export const promptSchema = zod.object({
+    data: zod.string(),
+});
