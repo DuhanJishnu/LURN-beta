@@ -7,6 +7,7 @@ import Welcome from "./components/Welcome.jsx";
 import OurVision from "./pages/OurVision.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Contact from "./pages/Contact.jsx";
+import Flashcards from "./pages/Flashcard.jsx";
 import "./index.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/welcome" element={<Welcome />} />
+                    <Route path="/flashcard" element={<Flashcards />} />
                 </Routes>
             </div>
         </Router>
