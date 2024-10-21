@@ -18,7 +18,7 @@ const NavLinks = styled.div`
 
   //new code 
   a {
-    color: white;
+    
     position: relative;
     text-decoration: none;
     padding-bottom: 2px;
@@ -107,10 +107,10 @@ const Header = () => {
     <Nav>
       <Logo>Logo</Logo>
       <NavLinks>
-        <a href="/">Home</a>
-        <a href="#">Our Vision</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
+        <a href="/" className='text-vsgreen hover:text-vsred'>Home</a>
+        <a href="#" className='text-vscyan hover:text-vsred'>Our Vision</a>
+        <a href="#" className='text-vspurple hover:text-vsred'>About Us</a>
+        <a href="#" className='text-vsyellow hover:text-vsred'>Contact</a>
       </NavLinks>
       <SignUpButton to="/signup">Sign Up</SignUpButton>
     </Nav>
