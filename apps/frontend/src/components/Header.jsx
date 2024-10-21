@@ -104,7 +104,11 @@ const LogOutButton = styled.button`
 
 const Header = () => {
     const url = useLocation();
-    console.log(url)
+
+    const logOutHandler = ()=>{
+        localStorage.clear("token");
+        navigate("/auth")
+    }
   return (
     <Nav>
       <Logo>Logo</Logo>
@@ -114,14 +118,7 @@ const Header = () => {
         <a href="/about_us" className='text-vspurple hover:text-vsred'>About Us</a>
         <a href="/contact" className='text-vsyellow hover:text-vsred'>Contact</a>
       </NavLinks>
-      { 
-        (url.pathname.includes('/auth')) ? 
-        <div></div> 
-        : (!localStorage.getItem("token"))?
-        <SignUpButton to="/auth">Sign Up</SignUpButton>
-        :
-        <LogOutButton onClick={logOutHandler}>Log Out</LogOutButton>
-        }
+      {(url.pathname.includes('/auth')) ? <div></div> : <SignUpButton to="/auth">Sign Up</SignUpButton>}
     </Nav>
   );
 };  
