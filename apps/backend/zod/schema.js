@@ -6,6 +6,11 @@ export const CreateUserSchema = zod.object({
     password: zod.string().min(8),
 });
 
+export const SignInUserSchema = zod.object({
+    email: zod.string().email(),
+    password: zod.string().min(8),
+});
+
 export const promptSchema = zod.object({
     data: zod.string(),
 });
