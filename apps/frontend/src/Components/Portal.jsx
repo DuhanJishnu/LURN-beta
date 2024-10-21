@@ -187,7 +187,7 @@ const SignUp = () => {
             {
                 method: "POST",
                 body: JSON.stringify({
-                    name,
+                    name: username,
                     email,
                     password,
                 }),

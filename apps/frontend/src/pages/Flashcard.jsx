@@ -29,8 +29,8 @@ function Flashcards() {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center bg-gray-900 text-white">
-      <div className="relative w-[25rem]">
+    <div className="h-screen flex justify-center items-center bg-[#212121] text-white">
+      <div className="relative w-[]">
         <button
           className="absolute left-0 top-[50%] translate-y-[-50%] bg-gray-700 p-2 rounded-full"
           onClick={handlePrev}
