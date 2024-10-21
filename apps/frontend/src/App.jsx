@@ -24,6 +24,7 @@ function App() {
                     <Route path="/auth" element={<Portal />} />
                     <Route path="/welcome" element={<Welcome />} />
                     <Route path="/quiz" element={<Quiz />} />
+                    <Route path="/flashcard" element={<Flashcards />} />
                 </Routes>
             </div>
         </Router>

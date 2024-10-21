@@ -1,3 +1,5 @@
+$card-space: 3px;
+
 .board {
   --card-width: min(200px, 20vmin);
   display: flex;
