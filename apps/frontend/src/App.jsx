@@ -7,6 +7,7 @@ import Welcome from "./components/Welcome.jsx";
 import OurVision from "./pages/OurVision.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Contact from "./pages/Contact.jsx";
+import Quiz from "./pages/Quiz.jsx";
 import Flashcards from "./pages/Flashcard.jsx";
 import "./index.css";
 
@@ -22,7 +23,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/auth" element={<Portal />} />
                     <Route path="/welcome" element={<Welcome />} />
-                    <Route path="/flashcard" element={<Flashcards />} />
+                    <Route path="/quiz" element={<Quiz />} />
                 </Routes>
             </div>
         </Router>
