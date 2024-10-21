@@ -1,23 +1,57 @@
 import React from "react";
 
-const AboutUs = () => {
-    return (
-        <div>
-            <div>
-                <section className="h-screen flex items-center justify-center bg-gray-800 text-white">
-                    <div className="max-w-2xl text-center">
-                        <h1 className="text-4xl font-bold mb-4">About Us</h1>
-                        <p className="text-lg">
-                            Welcome to our learning platform, where we aim to
-                            make education interactive and fun. Our team is
-                            dedicated to creating innovative solutions for
-                            students worldwide.
-                        </p>
-                    </div>
-                </section>
-            </div>
-        </div>
-    );
-};
 
-export default AboutUs;
+const teamMembers = [
+  {
+    name: 'Jishnu Duhan',
+    role: 'Director / Founding Partner',
+    description: `Director and founding partner of Studio Alto, Andrew has over 10 years experience in Australia and the UK. He has worked with a broad spectrum of clients, ranging from multi-national corporations to local and sustainable initiatives.`,
+    education: 'Bachelor of Technology (Computer Science) NIT Meghalaya',
+    img: '../../assets/Images/3.webp',
+  },
+  {
+    name: 'Charity Rymbai',
+    role: 'Director / Founding Partner',
+    description: `Mark is not only an experienced designer, but an enthusiastic design teacher and a passionate musician. With over 10 years of industry experience, Mark sees every new project as an opportunity to do something extraordinary.`,
+    education: 'Bachelor of Technology (Mechanical Engineering) NIT Meghalaya',
+    img: '../../assets/Images/3.webp',
+  },
+  {
+    name: 'Shashank Umar Vaishy',
+    role: 'Part Visual Communicator',
+    description: `Part visual communicator, part adventurer, Eunice sees the world through a slightly different lens. Originally hailing from Hong Kong’s South East Asia, she has settled into Studio Alto.`,
+    education: 'Bachelor of Technology (Computer Science) NIT, Meghalaya',
+    img: '../../assets/Images/Shashank.webp',
+  }
+];
+
+
+
+function App() {
+  
+
+  return (
+    <div>
+
+
+<div className="flex flex-wrap justify-center items-center gap-24 h-screen bg-black">
+      {teamMembers.map((item, index) => (
+        <div key={index} className="relative w-[300px] h-[400px] overflow-hidden group">
+          <img
+            src={item.img}
+            alt={item.name}
+            className="w-full h-full transition-all duration-300 ease-in-out rounded-[40px]"
+          />
+          <div className="absolute bottom-[-100%] left-0 w-full text-center text-white  bg-black bg-opacity-70 py-2 transition-all duration-700 ease-in-out group-hover:bottom-0">
+            <div className="text-2xl font-bold">{item.name}</div> 
+            <br/>
+            <div className="text-md p-2 ">{item.description}</div> 
+          </div>
+        </div>
+      ))}
+    </div>
+    </div>
+  );
+}
+
+export default App;
