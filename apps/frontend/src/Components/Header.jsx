@@ -108,9 +108,9 @@ const Header = () => {
       <Logo>Logo</Logo>
       <NavLinks>
         <a href="/" className='text-vsgreen hover:text-vsred'>Home</a>
-        <a href="#" className='text-vscyan hover:text-vsred'>Our Vision</a>
-        <a href="#" className='text-vspurple hover:text-vsred'>About Us</a>
-        <a href="#" className='text-vsyellow hover:text-vsred'>Contact</a>
+        <a href="/vision" className='text-vscyan hover:text-vsred'>Our Vision</a>
+        <a href="/about_us" className='text-vspurple hover:text-vsred'>About Us</a>
+        <a href="/contact" className='text-vsyellow hover:text-vsred'>Contact</a>
       </NavLinks>
       <SignUpButton to="/signup">Sign Up</SignUpButton>
     </Nav>
