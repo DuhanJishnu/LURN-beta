@@ -1,57 +1,52 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Section = styled.section`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 88vh;
-  padding: 0 5rem;
-  background-color: black;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88vh;
+    padding: 0 5rem;
+    background-color: black;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
 `;
 
 const IntroText = styled.div`
-  max-width: 50%;
-  font-size: 1.2rem;
-  line-height: 1.8;
+    max-width: 50%;
+    font-size: 1.2rem;
+    line-height: 1.8;
 `;
 
-
 const LurnSection = styled.div`
-  text-align: left;
-  font-size: 1.5rem;
+    text-align: left;
+    font-size: 1.5rem;
 `;
 
 const StartButton = styled(Link)`
-  background-color: white;
-  color: black;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 5px;
-  margin-top: 2rem;
+    background-color: white;
+    color: black;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 2rem;
 
-   
-   
-
-  &:hover {
-  background-color: green;
-  color: white;
-  animation:prop 0.2s ease 1;
-   
-  }
-
-  @keyframes prop{
-    from{
-    background-color:white;
+    &:hover {
+        background-color: green;
+        color: white;
+        animation: prop 0.2s ease 1;
     }
-    to{
-    background-color:green;
-    color:white;
+
+    @keyframes prop {
+        from {
+            background-color: white;
+        }
+        to {
+            background-color: green;
+            color: white;
+        }
     }
-  }
 `;
 
 const MainContent = () => {
@@ -75,7 +70,7 @@ const MainContent = () => {
       </LurnSection>
     </Section>
   );
+
 };
 
 export default MainContent;
-

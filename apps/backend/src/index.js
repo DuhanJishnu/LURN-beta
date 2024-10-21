@@ -1,14 +1,18 @@
-import { Hono } from 'hono'
-import authRouter from './Routes/authRoutes'
-import aiRouter from './Routes/aiRoutes'
+import { Hono } from "hono";
+import { cors } from "hono/cors";
 
-const app = new Hono()
+import authRouter from "./Routes/authRoutes";
+import aiRouter from "./Routes/aiRoutes";
 
-app.get('/health', (c) => {
-    return c.json({ status: 'ok' })
+const app = new Hono();
+
+app.use("*", cors());
+
+app.get("/health", (c) => {
+    return c.json({ status: "ok" });
 });
 
-app.route('/api/v1/auth/', authRouter);
-app.route('/api/v1/ai/', aiRouter);
+app.route("/api/v1/auth/", authRouter);
+app.route("/api/v1/ai/", aiRouter);
 
-export default app
+export default app;
