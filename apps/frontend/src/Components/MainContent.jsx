@@ -58,7 +58,7 @@ const MainContent = () => {
           An Artificial Intelligence platform that helps you learn with the help of GAMES that are interactive and fresh. 
           We offer infinite learning resources for our users that help them learn and grow.
         </p>
-        <StartButton to="/signup">Start Learning</StartButton>
+        <StartButton to="/auth">Start Learning</StartButton>
       </IntroText>
       <LurnSection className='text-4xl'>
         <h1 className='text-4xl'>LURN = {'{'}</h1>
