@@ -29,22 +29,3 @@ body{
       width: 100%;
     }
   }
-
-  /* Flashcards */
-.perspective {
-  perspective: 1000px;
-}
-
-.transform-style-3d {
-  transform-style: preserve-3d;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.rotateX-180 {
-  transform: rotateX(180deg);
-}
-  
