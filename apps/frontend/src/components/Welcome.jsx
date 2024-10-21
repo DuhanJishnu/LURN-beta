@@ -9,7 +9,7 @@ const Welcome = () => {
 
     React.useEffect(()=>{
         if(localStorage.getItem("token") === null){
-            navigate("/auth");
+            navigate("/signup");
         }
     },[])
     return (

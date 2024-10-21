@@ -1,11 +1,3 @@
-
-body {
-  margin: 0;
-  display: grid;
-  place-items: center;
-  perspective: 1000px;
-}
-
 .board {
   --card-width: min(200px, 20vmin);
   display: flex;
