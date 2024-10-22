@@ -1,48 +1,46 @@
-import React, { useState } from 'react';
-import './flascard.css';
+import React from 'react';
+import './flashcard.scss'; 
 
-const Card = ({ isTop, onClick }) => {
-  const [flipped, setFlipped] = useState(false);
+const flashcardData = [
+  {
+    q: "What is a dog's most common way of communicating?",
+    a: "Barking",
+  },
+  {
+    q: "Which planet is known as the Red Planet?",
+    a: "Mars",
+  },
+  {
+    q: "What is the largest ocean on Earth?",
+    a: "Pacific Ocean",
+  },
+];
 
-  const handleClick = () => {
-    setFlipped(!flipped);
-    onClick();  // Notify parent to raise the z-index
-  };
-
+const Flashcards = () => {
   return (
-    <div
-      className={`card ${flipped ? 'flipped' : ''}`}
-      onClick={handleClick}
-      style={{ zIndex: isTop ? 2 : 0 }} // Use zIndex to control which card is on top
-    >
-      <span className="wrapper">
-        <span className="content">
-          <span className="face back"></span>
-          <span className="face front"></span>
-        </span>
-      </span>
-    </div>
-  );
-};
-
-const Board = () => {
-  const [topCard, setTopCard] = useState(null); // Track which card is on top
-
-  const bringCardToTop = (index) => {
-    setTopCard(index);  // Update the index of the top card
-  };
-
-  return (
-    <div className="board">
-      {[...Array(3)].map((_, index) => (
-        <Card
-          key={index}
-          isTop={topCard === index}  // Check if this card is the top card
-          onClick={() => bringCardToTop(index)}  // Bring this card to the top when clicked
-        />
+    <article className="board">
+      {flashcardData.map((card, index) => (
+        <button 
+          className="card" 
+          key={index} 
+          onClick={(e) => e.currentTarget.classList.toggle('flipped')}
+        >
+          <span className="wrapper">
+            <span className="content">
+              <span className="face back">
+                <div className="back-top">{card.q}</div>
+                <div className="back-bottom">Back Bottom Text</div>
+              </span>
+              <span className="face front">
+                <div className="front-top">{card.a}</div>
+                <div className="front-bottom">Front Bottom Text</div>
+              </span>
+            </span>
+          </span>
+        </button>
       ))}
-    </div>
+    </article>
   );
 };
 
-export default Board;
+export default Flashcards;
