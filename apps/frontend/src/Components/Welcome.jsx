@@ -9,15 +9,13 @@ const Welcome = () => {
 
     const [data, setData] = React.useState([]);
     const [search, setSearch] = React.useState("");
-    // const [option, setOption] = React.useState("");
+    const [option, setOption] = React.useState("flashcard");
 
     React.useEffect(()=>{
         if(localStorage.getItem("token") === null){
             navigate("/auth");
         }
     },[])
-
-    const option = "flashcard";
 
     const submitHandler = async () => {
         const res = await fetch(
@@ -39,7 +37,7 @@ const Welcome = () => {
             <div className="p-20">
                 <TypewriterPage text={"Welcome to Learning Page"} />
                 <SearchBar setSearch={setSearch} submitHandler={submitHandler} />
-                {/* <Carousel setOption={setOption}/> */}
+                <Carousel setOption={setOption}/>
             </div>
         </div>
     );

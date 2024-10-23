@@ -1,14 +1,23 @@
 import React from "react";
 import "./Carousel.css";
 
-const Carousel = () => {
+const Carousel = ({setOption}) => {
     return (
         <>
-            <input type="radio" name="slider" id="item-1" defaultChecked />
-            <input type="radio" name="slider" id="item-2" />
-            <input type="radio" name="slider" id="item-3" />
-            <input type="radio" name="slider" id="item-4" />
-            <input type="radio" name="slider" id="item-5" />
+            <input type="radio" name="slider" id="item-1" alt="flashcard"
+                onChange={(e)=>setOption(e.target.alt)} defaultChecked />
+            <input type="radio" name="slider" id="item-2" alt="quiz"
+                onChange={(e)=>setOption(e.target.alt)} 
+            />
+            <input type="radio" name="slider" id="item-3" alt="mindmap"
+                onChange={(e)=>setOption(e.target.alt)} 
+            />
+            <input type="radio" name="slider" id="item-4" alt="flowchart"
+                onChange={(e)=>setOption(e.target.alt)} 
+            />
+            <input type="radio" name="slider" id="item-5" alt="newimage"
+                onChange={(e)=>setOption(e.target.alt)} 
+            />
             <div className="cards">
                 <label className="card" htmlFor="item-1" id="song-1">
                     <img src="../../assets/Images/1.png" alt="song 1" />
