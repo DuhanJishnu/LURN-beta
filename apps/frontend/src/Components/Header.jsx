@@ -105,7 +105,6 @@ const LogOutButton = styled.button`
 const Header = () => {
     const url = useLocation();
     const navigate = useNavigate();
-    console.log(url)
     const logoutHandler = () => {
         localStorage.removeItem("token");
         navigate('/auth');
