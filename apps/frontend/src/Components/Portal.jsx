@@ -112,6 +112,19 @@ const GoBack = styled.a`
     }
 `;
 
+const ErrorMessage = styled.a`
+    display: block;
+    margin-top: 1rem;
+    color: red;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+`;
+
+
+
 const SignIn = ({setLogin}) => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -120,9 +133,13 @@ const SignIn = ({setLogin}) => {
 
     function showError(message) {
         setErrorMessage(message);
+        setTimeout(() => {
+            setErrorMessage("");
+        }, 1000*3);
     }
 
     const onclickHandler = async () => {
+        setErrorMessage("Signing you in...");
         const res = await fetch(
             `${import.meta.env.VITE_REACT_APP_API_URL}/api/v1/auth/signin`,
             {
@@ -165,6 +182,7 @@ const SignIn = ({setLogin}) => {
                     Continue
                 </button>
                 <GoBack href="/">Go Back</GoBack>
+                <ErrorMessage>{errorMessage}</ErrorMessage>
             </FormWrapper>
         </Container>
     );
@@ -179,9 +197,13 @@ const SignUp = () => {
 
     function showError(message) {
         setErrorMessage(message);
+        setTimeout(() => {
+            setErrorMessage("");
+        }, 1000*3);
     }
 
     const onclickHandler = async () => {
+        setErrorMessage("Creating your account...");
         const res = await fetch(
             `${import.meta.env.VITE_REACT_APP_API_URL}/api/v1/auth/signup`,
             {
@@ -232,6 +254,7 @@ const SignUp = () => {
                     Continue
                 </button>
                 <GoBack href="/">Go Back</GoBack>
+                <ErrorMessage>{errorMessage}</ErrorMessage>
             </FormWrapper>
         </Container>
     );
