@@ -1,14 +1,17 @@
 import React from "react";
 
-const SearchBar = () => {
+const SearchBar = ({setSearch, submitHandler}) => {
     return (
         <div className="flex items-center bg-[#2f2f2f] p-2 rounded-full mt-20">
             <input
                 type="text"
                 className="bg-transparent w-full outline-none text-gray-200 px-4 placeholder-white"
                 placeholder="Message LURN"
+                onChange={(e) => setSearch(e.target.value)}
             />
-            <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-600 p-2 rounded-full ml-2">
+            <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-600 p-2 rounded-full ml-2"
+                onClick={submitHandler}
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

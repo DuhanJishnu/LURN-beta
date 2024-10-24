@@ -44,7 +44,7 @@ $card-width: min(200px, 20vmin);
   padding: 0;
   background-color: transparent;
   transition: all 200ms;
-  pointer-events: none;
+  pointer-events: auto;
 
   @each $i in (1, 2, 3) {
     &:nth-child(#{$i}) {

@@ -1,25 +1,13 @@
 import React from 'react';
 import './flashcard.scss'; 
-
-const flashcardData = [
-  {
-    q: "What is a dog's most common way of communicating?",
-    a: "Barking",
-  },
-  {
-    q: "Which planet is known as the Red Planet?",
-    a: "Mars",
-  },
-  {
-    q: "What is the largest ocean on Earth?",
-    a: "Pacific Ocean",
-  },
-];
+import { useLocation } from 'react-router-dom';
 
 const Flashcards = () => {
+  const location = useLocation();
+  const data = location.state?.data;
   return (
     <article className="board">
-      {flashcardData.map((card, index) => (
+      {data.map((card, index) => (
         <button 
           className="card" 
           key={index} 

@@ -1,33 +1,11 @@
 import React, { useState } from 'react';
-
-const questions = [
-  {
-    question_text: "What is a dog's most common way of communicating?",
-    option_1: "Barking",
-    option_2: "Meowing",
-    option_3: "Chirping",
-    option_4: "Hissing",
-    correct_option: "option_1",
-  },
-  {
-    question_text: 'Which planet is known as the Red Planet?',
-    option_1: 'Earth',
-    option_2: 'Mars',
-    option_3: 'Jupiter',
-    option_4: 'Saturn',
-    correct_option: 'option_2',
-  },
-  {
-    question_text: 'What is the capital city of Japan?',
-    option_1: 'Beijing',
-    option_2: 'Seoul',
-    option_3: 'Tokyo',
-    option_4: 'Bangkok',
-    correct_option: 'option_3',
-  },
-];
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Quiz = () => {
+  const location = useLocation();
+  const questions = location.state?.data;
+  const navigate = useNavigate();
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [answers, setAnswers] = useState({});
@@ -95,9 +73,9 @@ const Quiz = () => {
           </p>
           <button
             className="bg-blue-600 hover:bg-blue-800 p-4 rounded-lg text-xl"
-            onClick={() => window.location.reload()}
+            onClick={() => navigate("/welcome") }
           >
-            Restart Quiz
+            Go Back
           </button>
         </div>
       )}

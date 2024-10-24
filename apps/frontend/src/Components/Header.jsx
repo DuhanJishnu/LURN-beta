@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -104,7 +104,11 @@ const LogOutButton = styled.button`
 
 const Header = () => {
     const url = useLocation();
-    console.log(url)
+    const navigate = useNavigate();
+    const logoutHandler = () => {
+        localStorage.removeItem("token");
+        navigate('/auth');
+    }
   return (
     <Nav>
       <Logo>Logo</Logo>
@@ -114,7 +118,15 @@ const Header = () => {
         <a href="/about_us" className='text-vspurple hover:text-vsred'>About Us</a>
         <a href="/contact" className='text-vsyellow hover:text-vsred'>Contact</a>
       </NavLinks>
-      {(url.pathname.includes('/auth')) ? <div></div> : <SignUpButton to="/auth">Sign Up</SignUpButton>}
+      {
+        (url.pathname.includes('/auth')) ? 
+            <div></div> 
+        :
+            (localStorage.getItem("token"))? 
+                <LogOutButton onClick={logoutHandler}>Log Out</LogOutButton>
+            :
+                <SignUpButton to="/auth">Sign Up</SignUpButton>
+    }
     </Nav>
   );
 };  
