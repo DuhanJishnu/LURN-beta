@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import TypewriterPage from "./TypeWrite.jsx";
@@ -30,6 +30,20 @@ const Welcome = () => {
         }
     },[])
 
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+          submitHandler(); 
+        }
+      };
+    
+      useEffect(() => {
+        window.addEventListener('keydown', handleKeyPress);
+    
+        return () => {
+          window.removeEventListener('keydown', handleKeyPress);
+        };
+      }, []);
+
     const submitHandler = async () => {
         setLoading(true);
         const res = await fetch(
@@ -43,6 +57,9 @@ const Welcome = () => {
         );
         const data = await res.json();
         setData(data);
+        if (data.message === "Server Error") {
+            alert("Server Error");
+        }
         navigate(`/${option}`, { state: {data: data}});
 
     }
