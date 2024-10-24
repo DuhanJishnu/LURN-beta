@@ -14,7 +14,7 @@ const Flashcards = () => {
       <h2 className='text-white italic text-3xl text-center'>
         Topic : Topic Here </h2>
     </div> 
-   <div className=" flex w-screen h-screen bg-black px-[23vw]">
+   <div className=" flex w-screen h-screen bg-black px-[17vw]">
      <article className="board ">
       {data.map((card, index) => (
         <button 
