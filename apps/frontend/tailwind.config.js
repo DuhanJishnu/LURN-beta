@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,jsx}",
   ],
   theme: {
+    fontFamily:{
+      'courier_new': ['Courier Prime', 'monospace'],
+    },
     extend: {
 
       colors:{
