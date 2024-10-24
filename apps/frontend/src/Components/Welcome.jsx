@@ -5,7 +5,18 @@ import TypewriterPage from "./TypeWrite.jsx";
 import SearchBar from "./SearchBar.jsx";
 import Carousel from "./Carousel.jsx";
 
-const Generating = styled.a`
+const Generate = styled.a`
+    display: block;
+    margin-top: 1rem;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+`;
+
+const ReGenerate = styled.a`
     display: block;
     margin-top: 1rem;
     color: white;
@@ -23,26 +34,13 @@ const Welcome = () => {
     const [search, setSearch] = React.useState("");
     const [option, setOption] = React.useState("flashcard");
     const [loading, setLoading] = React.useState(false);
+    const [regenerate, setRegenerate] = React.useState(false);
 
     React.useEffect(()=>{
         if(localStorage.getItem("token") === null){
             navigate("/auth");
         }
     },[])
-
-    const handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
-          submitHandler(); 
-        }
-      };
-    
-      useEffect(() => {
-        window.addEventListener('keydown', handleKeyPress);
-    
-        return () => {
-          window.removeEventListener('keydown', handleKeyPress);
-        };
-      }, []);
 
     const submitHandler = async () => {
         setLoading(true);
@@ -58,17 +56,29 @@ const Welcome = () => {
         const data = await res.json();
         setData(data);
         if (data.message === "Server Error") {
-            alert("Server Error");
+            setRegenerate(true);
+            return;
         }
         navigate(`/${option}`, { state: {data: data}});
 
     }
+
+    const regenerateHandler = () => {
+        setRegenerate(false);
+        submitHandler();
+    }
+
     return (
         <div className="min-h-screen w-full  bg-[#212121] text-center ">
             <div className="p-20">
                 <TypewriterPage text={"Welcome to Learning Page"} />
                 <SearchBar setSearch={setSearch} submitHandler={submitHandler} />
-                <Generating>{loading? "Generating........": ""}</Generating>
+                {
+                    (regenerate)?
+                        <Generate onClick={regenerateHandler}>Regenerate</Generate>
+                    :
+                        <ReGenerate>{loading? "Generating........": ""}</ReGenerate>
+                }
                 <Carousel setOption={setOption}/>
             </div>
         </div>
