@@ -1,30 +1,10 @@
 $card-space: 3px;
-$card-width: min(200px, 20vmin);
-// html,
-// body {
-//   height: 100%;
-// }
+$total-card: 50; // change_later
 
-// body {
-//   margin: 0;
-//   display: grid;
-//   place-items: center;
-//   perspective: 1000px;
-// }
 
-// .board {
-//   --card-width: min(200px, 20vmin);
-//   display: flex;
-//   align-items: center;
-//   width: calc(4 * var(--card-width));
-//   box-sizing: content-box;
-//   aspect-ratio: 16/9;
-//   transform: rotateX(60deg);
-//   border: 4px solid black;
-//   border-radius: 16px;
-//   padding: 1rem 3rem;
-//   background: hsl(201deg, 100%, 32%);
-// }
+body {
+  perspective: 1000px;
+}
 
 .board,
 .card,
@@ -36,7 +16,7 @@ $card-width: min(200px, 20vmin);
 .card {
   --duration: 1200ms;
   position: absolute;
-  width: var(--card-width);
+  width: var(--card-width); 
   aspect-ratio: 20/29;
   outline: none;
   border: none;
@@ -44,9 +24,9 @@ $card-width: min(200px, 20vmin);
   padding: 0;
   background-color: transparent;
   transition: all 200ms;
-  pointer-events: auto;
+  pointer-events: none;
 
-  @each $i in (1, 2, 3) {
+  @for $i from 1 through $total-card {
     &:nth-child(#{$i}) {
       transform: translateZ($i * $card-space);
     }
@@ -74,27 +54,9 @@ $card-width: min(200px, 20vmin);
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px;
-  text-align: center;
-}
-
-.front, .back {
-  .front-top, .back-top {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: auto;
-  }
-
-  .front-bottom, .back-bottom {
-    font-size: 1rem;
-    margin-top: auto;
-  }
 }
 
 .front {
@@ -102,14 +64,18 @@ $card-width: min(200px, 20vmin);
   border-width: 1px 0px;
   border-color: black;
   border-style: solid;
+  border-radius: 10px;
+  background-color: #ade2b6f1;
 }
 
 .back {
   border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f5bdbdec;
 }
 
 .card.flipped {
-  @each $i in (1, 2, 3) {
+  @for $i from 1 through $total-card {
     &:nth-child(#{$i}) {
       transform: translateZ((4 - $i) * $card-space);
     }

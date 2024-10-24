@@ -1,0 +1,117 @@
+$card-space: 3px;
+$card-width: min(200px, 20vmin);
+$total-card: 4; 
+
+.card,
+.wrapper,
+.content {
+  transform-style: preserve-3d;
+}
+
+.card {
+  --duration: 1200ms;
+  position: absolute;
+  width: var(--card-width);
+  aspect-ratio: 20/29;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  transition: all 200ms;
+  pointer-events: auto;
+
+  // For Z-stacking of cards
+  @for $i from 1 through $total-card {
+    &:nth-child(#{$i}) {
+      transform: translateZ(($total-card - $i + 1) * $card-space);
+    }
+  }
+
+  // When card is flipped
+  &.flipped {
+    @for $i from 1 through $total-card {
+      &:nth-child(#{$i}) {
+        transform: translateZ((4 - $i) * $card-space);
+      }
+    }
+
+    .wrapper {
+      transform: rotateY(0.5turn);
+    }
+
+    .content {
+      transform: rotateX(-0.5turn) rotateY(1.5turn);
+    }
+  }
+}
+.wrapper {
+  pointer-events: initial;
+  display: block;
+  position: relative;
+  height: 100%;
+  transition: all var(--duration) ease-out;
+  transform-origin: 200% 50%;
+}
+
+.content {
+  display: block;
+  height: 100%;
+  transition: all var(--duration);
+}
+
+.face {
+  transition: transform calc(var(--duration) * 3 / 4);
+  transition-delay: calc(var(--duration) / 6);
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+}
+
+.front, .back {
+  .front-top, .back-top {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: auto;
+  }
+
+  .front-bottom, .back-bottom {
+    font-size: 1rem;
+    margin-top: auto;
+  }
+}
+
+.front {
+  transform: rotateZ(0.5turn) rotateY(-0.5turn);
+  border-width: 1px 0px;
+  border-color: black;
+  border-style: solid;
+}
+
+.back {
+  border: 1px solid black;
+}
+
+// .card.flipped {
+//   @for $i from 1 through $total-card {
+//     &:nth-child(#{$i}) {
+//       transform: translateZ((4 - $i) * $card-space);
+//     }
+//   }
+
+//   .wrapper {
+//     transform: rotateY(0.5turn);
+//   }
+
+//   .content {
+//     transform: rotateX(-0.5turn) rotateY(1.5turn);
+//   }
+// }
