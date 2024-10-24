@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs.jsx";
 import Contact from "./pages/Contact.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import Flashcards from "./pages/Flashcard.jsx";
+import Flowchart from "./pages/Flowchart.jsx";
 import "./index.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/welcome" element={<Welcome />} />
                     <Route path="/quiz" element={<Quiz />} />
                     <Route path="/flashcard" element={<Flashcards />} />
+                    <Route path="/flowchart" element={<Flowchart />} />
                 </Routes>
             </div>
         </Router>

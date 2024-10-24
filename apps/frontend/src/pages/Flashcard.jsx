@@ -6,10 +6,11 @@ const Flashcards = () => {
   const location = useLocation();
   const data = location.state?.data;
   return (
-    <article className="board">
+   <div className="bg-black h-[100vh] w-[100vw] flex px-[22vw] py-[30vh]">
+     <article className="board ">
       {data.map((card, index) => (
         <button 
-          className="card" 
+          className="card hover:shadow-[0_4px_30px_rgba(255,255,255,1)] rounded-lg " 
           key={index} 
           onClick={(e) => e.currentTarget.classList.toggle('flipped')}
         >
@@ -28,6 +29,7 @@ const Flashcards = () => {
         </button>
       ))}
     </article>
+   </div>
   );
 };
 
