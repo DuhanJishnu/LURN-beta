@@ -19,19 +19,19 @@ const Carousel = ({setOption}) => {
                 onChange={(e)=>setOption(e.target.alt)} 
             />
             <div className="cards">
-                <label className="card" htmlFor="item-1" id="song-1">
+                <label className="carouselCard" htmlFor="item-1" id="song-1">
                     <img src="../../assets/Images/1.png" alt="song 1" />
                 </label>
-                <label className="card" htmlFor="item-2" id="song-2">
+                <label className="carouselCard" htmlFor="item-2" id="song-2">
                     <img src="../../assets/Images/2.png" alt="song 2" />
                 </label>
-                <label className="card" htmlFor="item-3" id="song-3">
+                <label className="carouselCard" htmlFor="item-3" id="song-3">
                     <img src="../../assets/Images/3.png" alt="song 3" />
                 </label>
-                <label className="card" htmlFor="item-4" id="song-4">
+                <label className="carouselCard" htmlFor="item-4" id="song-4">
                     <img src="../../assets/Images/4.png" alt="song 4" />
                 </label>
-                <label className="card" htmlFor="item-5" id="song-5">
+                <label className="carouselCard" htmlFor="item-5" id="song-5">
                     <img src="../../assets/Images/5.png" alt="song 5" />
                 </label>
             </div>
