@@ -32,8 +32,9 @@ function App() {
 
   return (
     <div>
-<div className="bg-white transition-all duration-200 hover:shadow-[0_4px_30px_rgba(255,255,255,1)]">
-    <div className="flex flex-wrap justify-center my-2 text-3xl text-black font-bold  ">Our Team</div>
+<div className="p-0">
+    <div className=" bg-white t flex flex-wrap justify-center my-2 text-3xl text-black font-bold  ">Our Team</div>
+    
 </div>
 
 <div className="flex flex-wrap justify-center items-center gap-24 h-screen bg-black">
