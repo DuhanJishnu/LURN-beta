@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -261,6 +261,13 @@ const SignUp = () => {
 };
 
 const Portal = () => {
+    const navigate = useNavigate();
+    useEffect(()=>{
+        if(localStorage.getItem("token") !== null){
+            navigate("/welcome");
+        }
+    },[])
+    
     const [login, setLogin] = React.useState(true);
     return (<>
         {login ? <SignIn setLogin={setLogin}/> : <SignUp setLogin={setLogin}/>}

@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const SearchBar = ({setSearch, submitHandler}) => {
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+          submitHandler(); 
+        }
+    };
+
     return (
         <div className="flex items-center bg-[#2f2f2f] p-2 rounded-full mt-20">
             <input
@@ -8,6 +14,7 @@ const SearchBar = ({setSearch, submitHandler}) => {
                 className="bg-transparent w-full outline-none text-gray-200 px-4 placeholder-white"
                 placeholder="Message LURN"
                 onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={handleKeyDown}
             />
             <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-600 p-2 rounded-full ml-2"
                 onClick={submitHandler}
