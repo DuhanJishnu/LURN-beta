@@ -89,7 +89,7 @@ const ContinueButton = styled(Link)`
     color: white;
     padding: 1rem 2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 1.2rem;
     width: 100%;
     margin-top: 1.5rem;
@@ -178,7 +178,7 @@ const SignIn = ({setLogin}) => {
                         setPassword(e.target.value);
                     }}
                 />
-                <button className="mt-5 bg-[#00b894]" onClick={onclickHandler}>
+                <button className="mt-5 bg-[#00b894] p-1 rounded-md  hover:bg-[#00b855]" onClick={onclickHandler}>
                     Continue
                 </button>
                 <GoBack href="/">Go Back</GoBack>
@@ -250,7 +250,7 @@ const SignUp = () => {
                         setPassword(e.target.value);
                     }}
                 />
-                <button className="mt-5 bg-[#00b894]" onClick={onclickHandler}>
+                <button className="mt-5 bg-[#00b894] p-1 rounded-md hover:bg-[#00b855]" onClick={onclickHandler}>
                     Continue
                 </button>
                 <GoBack href="/">Go Back</GoBack>
