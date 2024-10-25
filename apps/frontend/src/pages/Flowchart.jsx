@@ -2,28 +2,35 @@ import React, { useState } from "react";
 
 const FlowchartData = [
   {
-    head: 'Heading 1',
-    desc: ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ut iure quis laborum rem explicabo architecto facilis dicta, voluptatem assumenda!',
+    "head": "Set the Display Property",
+    "desc": "Ensure your div has a display property that allows for centering, such as 'flex' or 'grid'."
   },
- 
   {
-    head: 'Heading 2',
-    desc: 'Description 2',
+    "head": "Apply Alignment Properties",
+    "desc": "Use `justify-content: center` for horizontal centering and `align-items: center` for vertical centering. If using 'grid', set `place-items: center`."
   },
+  {
+    "head": "Consider Container Size",
+    "desc": "If necessary, set a fixed width or height for your container to enable proper centering."
+  },
+  {
+    "head": "Check Parent Elements",
+    "desc": "Make sure parent elements don't have conflicting alignment properties that are preventing your div from centering."
+  }
 ];
 
 const Flowchart = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="main">
+    <div className="main bg-black h-screen">
       <div className="flex justify-center pt-[5vh] text-center text-white font-bold italic bg-black text-4xl">
       Flow Chart
        <br/>
         Topic: topic here
 
       </div>
-      <div className="flowchart-container h-screen bg-black items-center flex pt-[30vh] justify-center space-x-8 relative">
+      <div className="flowchart-container pt-20 bg-black items-center flex  justify-center space-x-8 relative">
       {FlowchartData.map((item, index) => (
         <div
           key={index} 
@@ -40,7 +47,7 @@ const Flowchart = () => {
           )}
 
           {hoveredIndex === index && (
-            <div className="absolute -bottom-20 translate-y-[80%] transform -translate-x-1/2 italic text-white p-4 rounded-lg w-64 text-center ">
+            <div className="absolute transform  translate-y-8 border-2 border-b-emerald-50 italic text-white p-4 rounded-lg w-fit text-center ">
               {item.desc}   
             </div>
           
