@@ -35,9 +35,11 @@ const MainContent = () => {
       An Artificial Intelligence platform that helps you learn with the help of GAMES that are interactive and fresh.
       We offer infinite learning resources for our users that help them learn and grow.
     </p>
-    <button className="bg-white text-black px-8 py-4 text-lg font-bold rounded-md mt-8 hover:bg-green-500 hover:text-white transition duration-250 ease-in-out">
-      Start Learning
-    </button>
+    
+    <a href="/auth"><button class="bg-white text-black px-8 py-4 text-lg font-bold rounded-md mt-8 hover:bg-green-500 hover:text-white transition duration-250 ease-in-out">
+      Start Learning</button>
+    </a>
+    
   </div>
 
   
