@@ -1,4 +1,4 @@
-.card {
+.carouselCard {
   position: absolute;
   width: 220px;
   height: 275px;
@@ -20,47 +20,47 @@ input[type="radio"] {
   display: none;
 }
 
-#item-1:checked ~ .cards #song-5,
-#item-2:checked ~ .cards #song-1,
-#item-3:checked ~ .cards #song-2,
-#item-4:checked ~ .cards #song-3,
-#item-5:checked ~ .cards #song-4 {
+#item-1:checked ~ .cards #tile-5,
+#item-2:checked ~ .cards #tile-1,
+#item-3:checked ~ .cards #tile-2,
+#item-4:checked ~ .cards #tile-3,
+#item-5:checked ~ .cards #tile-4 {
   transform: translatex(-90%) scale(.6);
   z-index: 0;
 }
 
-#item-1:checked ~ .cards #song-4,
-#item-2:checked ~ .cards #song-5,
-#item-3:checked ~ .cards #song-1,
-#item-4:checked ~ .cards #song-2,
-#item-5:checked ~ .cards #song-3 {
+#item-1:checked ~ .cards #tile-4,
+#item-2:checked ~ .cards #tile-5,
+#item-3:checked ~ .cards #tile-1,
+#item-4:checked ~ .cards #tile-2,
+#item-5:checked ~ .cards #tile-3 {
   transform: translatex(-50%) scale(.7);
   z-index: 1;
 }
 
-#item-1:checked ~ .cards #song-2,
-#item-2:checked ~ .cards #song-3,
-#item-3:checked ~ .cards #song-4,
-#item-4:checked ~ .cards #song-5,
-#item-5:checked ~ .cards #song-1 {
+#item-1:checked ~ .cards #tile-2,
+#item-2:checked ~ .cards #tile-3,
+#item-3:checked ~ .cards #tile-4,
+#item-4:checked ~ .cards #tile-5,
+#item-5:checked ~ .cards #tile-1 {
   transform: translatex(50%) scale(.7);
   z-index: 1;
 }
 
-#item-1:checked ~ .cards #song-3,
-#item-2:checked ~ .cards #song-4,
-#item-3:checked ~ .cards #song-5,
-#item-4:checked ~ .cards #song-1,
-#item-5:checked ~ .cards #song-2 {
+#item-1:checked ~ .cards #tile-3,
+#item-2:checked ~ .cards #tile-4,
+#item-3:checked ~ .cards #tile-5,
+#item-4:checked ~ .cards #tile-1,
+#item-5:checked ~ .cards #tile-2 {
   transform: translatex(90%) scale(.6); 
   z-index: 0;
 }
 
-#item-1:checked ~ .cards #song-1,
-#item-2:checked ~ .cards #song-2,
-#item-3:checked ~ .cards #song-3,
-#item-4:checked ~ .cards #song-4,
-#item-5:checked ~ .cards #song-5 {
+#item-1:checked ~ .cards #tile-1,
+#item-2:checked ~ .cards #tile-2,
+#item-3:checked ~ .cards #tile-3,
+#item-4:checked ~ .cards #tile-4,
+#item-5:checked ~ .cards #tile-5 {
   transform: translatex(0) scale(0.9);
   opacity: 1;
   z-index: 2;
