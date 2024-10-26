@@ -70,7 +70,7 @@ const Welcome = () => {
 
     return (
         <div className="min-h-screen w-full  bg-[#212121] text-center ">
-            <div className="p-20">
+            <div className="p-2 sm:p-20">
                 <TypewriterPage text={"Welcome to Learning Page"} />
                 <SearchBar setSearch={setSearch} submitHandler={submitHandler} />
                 {

@@ -33,17 +33,17 @@ function App() {
   return (
     <div>
 <div className="p-0">
-    <div className=" bg-white t flex flex-wrap justify-center my-2 text-3xl text-black font-bold  ">Our Team</div>
+    <div className=" bg-white t flex flex-wrap justify-center my-2 text-3xl text-black font-bold">Our Team</div>
     
 </div>
 
-<div className="flex flex-wrap justify-center items-center gap-24 h-screen bg-black">
+<div className="flex flex-wrap justify-center items-center gap-24 h-screen">
       {teamMembers.map((item, index) => (
-        <div key={index} className="relative w-[300px] h-[400px] overflow-hidden group rounded-[40px] transition-all duration-700 hover:shadow-[0_4px_30px_rgba(255,255,255,1)]  hover:-translate-y-3 transform ">
+        <div key={index} className="w-[300px] h-[400px] overflow-hidden group rounded-[40px] transition-all duration-700 hover:shadow-[0_4px_30px_rgba(255,255,255,1)]  hover:-translate-y-3 transform -z-10">
           <img
             src={item.img}
             alt={item.name}
-            className="w-full h-full transition-all duration-300 ease-in-out rounded-[40px] "
+            className="w-full h-full transition-all duration-300 ease-in-out rounded-[40px]"
           />
           <div className="absolute bottom-[-100%] left-0 w-full text-center text-white  bg-black bg-opacity-70 py-2 transition-all duration-700 ease-in-out group-hover:bottom-0">
             <div className="text-2xl font-bold">{item.name}</div> 

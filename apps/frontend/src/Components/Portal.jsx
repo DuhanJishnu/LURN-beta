@@ -14,7 +14,6 @@ const Container = styled.div`
 
 const FormWrapper = styled.div`
   background-color: black;
-  padding: 2rem 4rem;
   text-align: center;
   max-width: 400px;
   width: 100%;
@@ -160,7 +159,7 @@ const SignIn = ({setLogin}) => {
     };
     return (
         <Container>
-            <FormWrapper>
+            <FormWrapper className="px-[2rem] sm:px-[4rem]">
                 <Logo>Logo</Logo>
                 <h2>Sign in to your account</h2>
                 <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Create account here</Link></u></h3>
