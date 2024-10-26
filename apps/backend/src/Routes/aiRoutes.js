@@ -39,7 +39,38 @@ aiRouter.post("/quiz", async (c) => {
     }
 
     try {
-        const full_prompt = `Create a mcq quiz on: ${body.data} and return valid json string use double quotes no spaces key for que as 'question_text' and 'option_1' respecively and corect ans key as 'correct_option'just return a list of dict no extras"`;
+        const full_prompt = `Create 10 mzq on ${body.data}. Each question should be dictionary with keys: "question_text" for the que "option_1" through "option_4" for each option "correct_option" specifying correct answer's key (like "option_1"). return a JSON list only with each question structured as dictionary. Use double quotes for all keys and ensure there are no extra spaces.`;
+ 
+        const response = await ai(c, full_prompt);
+
+        return c.json(response, 200);
+    } catch (error) {
+        console.error(error);
+        return c.json(
+            {
+                message: "Server Error",
+            },
+            500,
+        );
+    }
+});
+
+aiRouter.post("/compare", async (c) => {
+    const body = await c.req.json();
+
+    const parsed = promptSchema.safeParse(body);
+
+    if (!parsed.success) {
+        return c.json(
+            {
+                message: "Wrong inputs",
+            },
+            400,
+        );
+    }
+
+    try {
+        const full_prompt = `compare ${body.data}. Return array of size > 10 that contains objects with "key1" as 'category' having only 2 possible values the name of objects to be compared and key2 as 'value' having values the comparison values. don't write names of category in comparison data and keep concise`;
  
         const response = await ai(c, full_prompt);
 

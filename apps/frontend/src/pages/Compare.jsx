@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-
-const CompareData = [
-  { category: "Cat", value: "Generally more independent" },
-  { category: "Dog", value: "Typically more social and requires attention" },
-  { category: "Cat", value: "Known for their cleanliness" },
-  { category: "Dog", value: "Need regular grooming" },
-  { category: "Cat", value: "Typically more adaptable to smaller living spaces" },
-  { category: "Dog", value: "Generally need space to run and play" },
-  { category: "Cat", value: "Generally quieter" },
-  { category: "Dog", value: "Can be vocal frequently" },
-  { category: "Cat", value: "Known for their agility and climbing abilities" },
-  { category: "Dog", value: "Have a wide range of abilities depending on breed" },
-  { category: "Cat", value: "Often considered more aloof" },
-  { category: "Dog", value: "Typically more eager to please their owners" },
-];
+import { useLocation } from "react-router-dom";
 
 const Compare = () => {
+  const location = useLocation();
+  const CompareData = location.state.data;
   const [items, setItems] = useState(CompareData);
   const [droppedItems, setDroppedItems] = useState({});
 

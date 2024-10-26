@@ -15,7 +15,7 @@ const Carousel = ({setOption}) => {
             <input type="radio" name="slider" id="item-4" alt="flowchart"
                 onChange={(e)=>setOption(e.target.alt)} 
             />
-            <input type="radio" name="slider" id="item-5" alt="newimage"
+            <input type="radio" name="slider" id="item-5" alt="compare"
                 onChange={(e)=>setOption(e.target.alt)} 
             />
             <div className="cards">
