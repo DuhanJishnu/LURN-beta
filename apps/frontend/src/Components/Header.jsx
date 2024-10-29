@@ -11,7 +11,13 @@ const Nav = styled.nav`
     justify-content: space-between;
     padding: 1rem 2rem;
     align-items: center;
-    background-color: black;
+    background-color: transaprent;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     color: white;
 `;
 

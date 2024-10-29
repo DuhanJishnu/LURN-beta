@@ -111,15 +111,11 @@ const GoBack = styled.a`
     }
 `;
 
-const ErrorMessage = styled.a`
+const ErrorMessage = styled.div`
     display: block;
     margin-top: 1rem;
     color: red;
     cursor: pointer;
-
-    &:hover {
-        text-decoration: underline;
-    }
 `;
 
 

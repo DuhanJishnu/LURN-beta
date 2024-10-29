@@ -18,7 +18,7 @@ async function ai(c, prompt) {
 
     const result = await model.generateContent(prompt);
 
-    const final_data = JSON.parse(result.response.text().replace(/```json\n|\n```/g, ""));
+    const final_data = JSON.parse(result.response.text().replace(/```json\n|\n```|```javascript\n/g, ""));
 
     return final_data;
 }
