@@ -7,7 +7,7 @@ const MainContent = () => {
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
-      <div className="container grid grid-cols-1 sm:grid-cols-2 place-items-center h-[100%`] pl-4 sm:pl-[5rem] text-white font-courier_new">
+      <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center h-[100%`] pl-4 sm:pl-[5rem] text-white font-courier_new">
         <div className="grid place-content-center max-w-full sm:max-w-[70%] sm:leading-loose pb-10">
           <h1 className='text-3xl sm:text-7xl'>Introducing LURN</h1>
           <p className='m-10 sm:text-[1.2rem]'>
@@ -15,11 +15,20 @@ const MainContent = () => {
               We offer infinite learning resources for our users that help them learn and grow.
           </p>
           <Link
-           to="/auth"
-            className="bg-white text-black py-4 px-8 text-lg font-bold rounded-md mt-8 w-fit h-fit hover:bg-green-700 hover:text-white transition ease-in-out duration-200"
-         >
-            Start Learning
-          </Link>
+  to="/auth"
+  className="
+    bg-black text-white border border-black rounded-md w-fit text-xl
+    shadow-[4px_4px_0_0_white,4px_4px_0_1px_black] 
+    font-sans font-normal leading-5 px-10 py-3
+    inline-block cursor-pointer select-none 
+    hover:no-underline active:shadow-[2px_2px_0_0_white,2px_2px_0_1px_black]
+    active:translate-x-[2px] active:translate-y-[2px]
+    transition-all duration-200 ease-in-out
+  "
+>
+  Start Learning
+</Link>
+
         </div>
        <div className='text-xl sm:text-4xl text-left'>
           <h1 className='text-4xl'>LURN = {'{'}</h1>
