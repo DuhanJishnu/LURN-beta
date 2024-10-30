@@ -1,22 +1,14 @@
 import React, { useState } from "react";
-
-const FlowchartData = [
-  {
-    head: 'Heading 1',
-    desc: 'Description 1',
-  },
-  {
-    head: 'Heading 2',
-    desc: 'Description 2',
-  },
-];
+import { useLocation } from "react-router-dom";
 
 const Flowchart = () => {
+  const location = useLocation();
+  const data = location.state?.data;
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <div className="flowchart-container h-screen flex items-center justify-center space-x-8 relative p-10">
-      {FlowchartData.map((item, index) => (
+      {data.map((item, index) => (
         <div
           key={index}
           className="relative group"
@@ -27,7 +19,7 @@ const Flowchart = () => {
             <h3 className="font-bold">{item.head}</h3>
           </div>
 
-          {index > 0 && index < FlowchartData.length && (
+          {index > 0 && index < data.length && (
             <div className="arrow w-8 h-0.5 bg-gray-400 absolute transform -translate-x-8 -translate-y-7"></div>
           )}
 
