@@ -30,7 +30,7 @@ function App() {
                     <Route path="/flashcard" element={<Flashcards />} />
                     <Route path="/flowchart" element={<Flowchart />} />
                     <Route path="/compare" element={<Compare />} />
-                    
+                    <Route path="/search" element={<SearchComponent />} />
                     <Route path="/mindmap" element={<MindMap />} />
                     <Route path="*" element={<h1>Not Found</h1>} />
                 </Routes>
