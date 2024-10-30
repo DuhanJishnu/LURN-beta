@@ -3,10 +3,10 @@ import "./SearchNew.css";
 
 function SearchComponent() {
   return (
-    <div className="p-20 container">
+    <div className="p-20 container_search">
       <div className="bg"></div>
       <div className="input-wrapper">
-        <div className="input">
+        <div className="input_search">
           <div className="glow left"></div>
           <div className="glow right"></div>
 

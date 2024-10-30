@@ -1,4 +1,4 @@
-.container {
+.container_search {
     --ease-elastic: cubic-bezier(0.7, -0.5, 0.3, 1.5);
     --icon-color: #bcacbd;
     --glow-l-color: #8422b1;
@@ -15,7 +15,7 @@
     opacity: 0;
     animation: fadeIn 1.4s ease forwards 0.2s;
   }
-  .container .bg {
+  .container_search .bg {
     position: absolute;
     inset: 0;
     mask-image: linear-gradient(
@@ -26,7 +26,7 @@
       transparent 100%
     );
   }
-  .container .bg::before {
+  .container_search .bg::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -53,13 +53,13 @@
     z-index: 1;
   }
   
-  .input {
+  .input_search {
     background-color: #010201;
     border-radius: var(--input-radius);
     position: relative;
     z-index: 10;
   }
-  .input::before {
+  .input_search::before {
     pointer-events: none;
     content: "type to interact";
     position: absolute;
@@ -110,12 +110,12 @@
     z-index: -1;
     background: linear-gradient(to right, transparent, rgba(2, 2, 2, 0.6));
   }
-  .input:focus-within .reflection:before {
+  .input_search:focus-within .reflection:before {
     transition: all 1.2s cubic-bezier(0.5, 0, 0.3, 1);
     transform: translate(440px, 0) skew(40deg) scaleX(0.5);
   }
   
-  .input input {
+  .input_search input {
     max-width: 100%;
     width: 310px;
     height: 60px;
@@ -131,7 +131,7 @@
     z-index: 2;
   }
   
-  .input input::placeholder {
+  .input_search input::placeholder {
     color: #d6d0d6;
   }
   
@@ -706,21 +706,21 @@
   
   /* States */
   
-  .input input:not(:placeholder-shown),
-  .input input:focus {
+  .input_search input:not(:placeholder-shown),
+  .input_search input:focus {
     width: 360px;
   }
   
-  .input input:not(:placeholder-shown) ~ .reflection::after {
+  .input_search input:not(:placeholder-shown) ~ .reflection::after {
     display: none;
   }
   
-  .input input:focus:not(:placeholder-shown) ~ .icon .magnifier,
+  .input_search input:focus:not(:placeholder-shown) ~ .icon .magnifier,
   .icon .loading {
     opacity: 0;
   }
   
-  .input input:focus:not(:placeholder-shown) ~ .icon .loading,
+  .input_search input:focus:not(:placeholder-shown) ~ .icon .loading,
   .icon .magnifier {
     opacity: 1;
     transition-delay: 0.3s;
@@ -728,52 +728,52 @@
     transform: scale(1) translate(none);
   }
   
-  .input input:focus:not(:placeholder-shown) ~ .icon .magnifier {
+  .input_search input:focus:not(:placeholder-shown) ~ .icon .magnifier {
     transform: scale(1.2) translate(1.7px, 1.7px);
   }
   
-  .input input:not(:placeholder-shown) ~ .result {
+  .input_search input:not(:placeholder-shown) ~ .result {
     height: 193px;
     transition-delay: 0.8s;
     pointer-events: all;
   }
   
-  .input input:not(:placeholder-shown) ~ .result .result-header::before {
+  .input_search input:not(:placeholder-shown) ~ .result .result-header::before {
     width: 100%;
     transition-delay: 1.1s;
   }
   
-  .input input:not(:placeholder-shown) ~ .result .result-header::after {
+  .input_search input:not(:placeholder-shown) ~ .result .result-header::after {
     opacity: 0.7;
     transition-delay: 0.9s;
   }
   
-  .input input:not(:placeholder-shown) ~ .result .result-header > div {
+  .input_search input:not(:placeholder-shown) ~ .result .result-header > div {
     opacity: 0;
     animation: slideDown 1.4s ease forwards calc(1s + var(--i) * 0.05s);
   }
   
-  .input input:not(:placeholder-shown) ~ .result .result-content-header div {
+  .input_search input:not(:placeholder-shown) ~ .result .result-content-header div {
     opacity: 0;
     animation: slideDown 1.4s ease forwards calc(1.3s + var(--i) * 0.04s);
   }
   
-  .input input:not(:placeholder-shown) ~ .result .result-content a {
+  .input_search input:not(:placeholder-shown) ~ .result .result-content a {
     opacity: 0;
     animation: slideDown 1.4s ease forwards calc(1.4s + var(--i) * 0.1s);
   }
   
-  .input input:not(:placeholder-shown) ~ .result .result-content-header {
+  .input_search input:not(:placeholder-shown) ~ .result .result-content-header {
     opacity: 0;
     animation: fadeIn 1.4s ease forwards 1s;
   }
   
-  .input input:not(:placeholder-shown) ~ .result::before {
+  .input_search input:not(:placeholder-shown) ~ .result::before {
     transition-delay: 0.8s;
     opacity: 1;
   }
   
-  .input input:not(:placeholder-shown) ~ .result .result-content {
+  .input_search input:not(:placeholder-shown) ~ .result .result-content {
     animation: visibility 1.4s ease forwards;
   }
   
