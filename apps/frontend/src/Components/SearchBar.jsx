@@ -11,7 +11,7 @@ const SearchBar = ({setSearch, submitHandler}) => {
         <div className="flex items-center bg-[#2f2f2f] p-2 rounded-full mt-20">
             <input
                 type="text"
-                className="bg-transparent w-full outline-none text-gray-200 px-4 placeholder-white"
+                className="z-0 bg-transparent w-full outline-none text-gray-200 px-4 placeholder-white"
                 placeholder="Message LURN"
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyDown={handleKeyDown}

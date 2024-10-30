@@ -54,13 +54,13 @@ export default function Sidebar({ children }) {
                ) : (
                     <div>
                          <aside
-                              className={`h-screen fixed top-0 w-full bg-white border-r shadow-sm transition-transform transform ${
+                              className={`h-screen fixed top-0 w-full bg-[#212121] border-r shadow-sm transition-transform transform ${
                                    showSidebar
                                         ? 'translate-x-0'
                                         : '-translate-x-full'
                               } md:translate-x-0`}
                          >
-                              <nav className="h-full flex flex-col">
+                              <nav className="pt-20 h-full flex flex-col">
                                    <div className="p-4 pb-2 flex justify-center md:justify-between items-center">
                                         <img
                                             //  src={schoolLogo}
@@ -118,7 +118,7 @@ export default function Sidebar({ children }) {
                                    </div>
                               </nav>
                          </aside>
-                         <div className="w-full h-[60px] top-0 right-0 md:hidden shadow-lg z-50 bg-black">
+                         <div className="w-full h-[60px] top-0 right-0 md:hidden shadow-lg z-50 bg-transparent fixed">
                          <button
                               onClick={() => {
                                    setShowSidebar((curr) => !curr);
