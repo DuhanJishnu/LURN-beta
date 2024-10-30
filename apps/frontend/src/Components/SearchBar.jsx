@@ -16,7 +16,7 @@ const SearchBar = ({setSearch, submitHandler}) => {
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyDown={handleKeyDown}
             />
-            <button className="flex justify-center items-center bg-gray-700 hover:bg-gray-600 p-2 rounded-full ml-2"
+            <button className="z-0 flex justify-center items-center bg-gray-700 hover:bg-gray-600 p-2 rounded-full ml-2"
                 onClick={submitHandler}
             >
                 <svg

@@ -9,6 +9,7 @@ export default {
       'courier_new': ['Courier Prime', 'monospace'],
     },
     extend: {
+      
 
       colors:{
         'vsyellow': '#fac863' ,

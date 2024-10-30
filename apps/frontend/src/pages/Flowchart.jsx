@@ -8,14 +8,14 @@ const Flowchart = () => {
 
   return (
     <div className="flowchart-container h-screen flex items-center justify-center space-x-8 relative p-10">
-      {data.map((item, index) => (
+      {FlowchartData.map((item, index) => (
         <div
-          key={index}
+          key={index} 
           className="relative group"
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <div className="flowchart-item bg-black text-white p-4 rounded-lg w-fit text-center cursor-pointer">
+          <div className="flowchart-item bg-white text-black p-4  rounded-lg w-fit text-center cursor-pointer hover:shadow-[0_4px_30px_rgba(255,255,255,1)]">
             <h3 className="font-bold">{item.head}</h3>
           </div>
 
@@ -24,12 +24,14 @@ const Flowchart = () => {
           )}
 
           {hoveredIndex === index && (
-            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white p-4 rounded-lg w-64 text-center transition-opacity duration-300">
+            <div className="absolute transform  translate-y-8 border-2 border-b-emerald-50 italic text-white p-4 rounded-lg w-fit text-center ">
               {item.desc}   
             </div>
+          
           )}
         </div>
       ))}
+    </div>
     </div>
   );
 };

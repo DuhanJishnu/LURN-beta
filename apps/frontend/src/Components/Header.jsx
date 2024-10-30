@@ -1,12 +1,23 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import Sidebar from './Sidebar';
+import { SidebarItem } from './Sidebar';
+import { Baby, EyeClosed, Layers, MailCheck, PersonStanding, Search, Users } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import AuthButton from "./AuthButton"
 
 const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
     align-items: center;
-    background-color: black;
+    background-color: transaprent;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     color: white;
 `;
 
@@ -43,73 +54,55 @@ const NavLinks = styled.div`
     }
 `;
 
-const SignUpButton = styled(Link)`
-    background-color: white;
-    color: black;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
 
-    //added later
-    &:hover {
-        background-color: green;
-        color: white;
-        animation: zoom 1.2s ease infinite;
-        animation: prop 0.2s ease 1;
-    }
-
-    @keyframes prop {
-        from {
-            background-color: white;
-        }
-        to {
-            background-color: green;
-            color: white;
-        }
-    }
-`;
 
 const Logo = styled.div`
     font-size: 1.5rem;
     font-weight: bold;
 `;
 
-const LogOutButton = styled.button`
-    background-color: white;
-    color: black;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-
-    //added later
-    &:hover {
-        background-color: green;
-        color: white;
-        animation: zoom 1.2s ease infinite;
-        animation: prop 0.2s ease 1;
-    }
-
-    @keyframes prop {
-        from {
-            background-color: white;
-        }
-        to {
-            background-color: green;
-            color: white;
-        }
-    }
-`;
-
 const Header = () => {
-    const url = useLocation();
-    const navigate = useNavigate();
-    const logoutHandler = () => {
-        localStorage.removeItem("token");
-        navigate('/auth');
-    }
+
+const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
   return (
+    (innerWidth<768)?
+    <div className='z-50'>
+    <Sidebar>
+        <SidebarItem
+                goToPage=""
+                icon={<Layers size={20} />}
+                text="Home"
+        ></SidebarItem>
+        <SidebarItem
+                goToPage="vision"
+                icon={<EyeClosed size={20} />}
+                text="vision"
+        ></SidebarItem>
+        <SidebarItem
+                goToPage="about_us"
+                icon={<Users size={20} />}
+                text="About Us"
+        ></SidebarItem>
+        <SidebarItem
+                goToPage="Contact"
+                icon={<MailCheck size={20} />}
+                text="Contact"
+        ></SidebarItem>
+               
+    </Sidebar>
+    </div>
+    :
     <Nav>
       <Logo>Logo</Logo>
       <NavLinks>
@@ -118,15 +111,7 @@ const Header = () => {
         <a href="/about_us" className='text-vspurple hover:text-vsred'>About Us</a>
         <a href="/contact" className='text-vsyellow hover:text-vsred'>Contact</a>
       </NavLinks>
-      {
-        (url.pathname.includes('/auth')) ? 
-            <div></div> 
-        :
-            (localStorage.getItem("token"))? 
-                <LogOutButton onClick={logoutHandler}>Log Out</LogOutButton>
-            :
-                <SignUpButton to="/auth">Sign Up</SignUpButton>
-    }
+      <AuthButton />
     </Nav>
   );
 };  
