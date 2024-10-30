@@ -42,4 +42,10 @@ const Flashcards = () => {
   );
 };
 
+const MobileFlashcard = () => {
+  return(
+    <div></div>
+  );
+}
 export default Flashcards;
+

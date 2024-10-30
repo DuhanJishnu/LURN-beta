@@ -32,3 +32,10 @@ body{
       width: 100%;
     }
   }
+
+
+  /* Mobile Flashcard */
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
