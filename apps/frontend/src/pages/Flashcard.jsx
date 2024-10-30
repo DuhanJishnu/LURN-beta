@@ -6,7 +6,7 @@ const Flashcards = () => {
   const location = useLocation();
   const data = location.state?.data;
   return (
-  <div> 
+  <div className="bg-black pt-20"> 
     <div className='bg-black h-32'>
       <h1 className='text-white font-bold italic text-4xl text-center'>
         FlashCards</h1>
@@ -22,8 +22,8 @@ const Flashcards = () => {
           key={index} 
           onClick={(e) => e.currentTarget.classList.toggle('flipped')}
         >
-          <span className="wrapper">
-            <span className="content">
+          <span className="wrapper_flashcard">
+            <span className="content_flashcard">
               <span className="face back">
                 <div className="back-top p-2 mt-10 font-bold text-xl text-[#4d0707] ">{card.q}</div>
                 <div>😅😉</div>
