@@ -1,36 +1,13 @@
 import React, { useState } from "react";
-
-const FlowchartData = [
-  {
-    "head": "Set the Display Property",
-    "desc": "Ensure your div has a display property that allows for centering, such as 'flex' or 'grid'."
-  },
-  {
-    "head": "Apply Alignment Properties",
-    "desc": "Use `justify-content: center` for horizontal centering and `align-items: center` for vertical centering. If using 'grid', set `place-items: center`."
-  },
-  {
-    "head": "Consider Container Size",
-    "desc": "If necessary, set a fixed width or height for your container to enable proper centering."
-  },
-  {
-    "head": "Check Parent Elements",
-    "desc": "Make sure parent elements don't have conflicting alignment properties that are preventing your div from centering."
-  }
-];
+import { useLocation } from "react-router-dom";
 
 const Flowchart = () => {
+  const location = useLocation();
+  const data = location.state?.data;
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="main bg-black h-screen">
-      <div className="flex justify-center pt-[5vh] text-center text-white font-bold italic bg-black text-4xl">
-      Flow Chart
-       <br/>
-        Topic: topic here
-
-      </div>
-      <div className="flowchart-container pt-20 bg-black items-center flex  justify-center space-x-8 relative">
+    <div className="flowchart-container h-screen flex items-center justify-center space-x-8 relative p-10">
       {FlowchartData.map((item, index) => (
         <div
           key={index} 
@@ -42,7 +19,7 @@ const Flowchart = () => {
             <h3 className="font-bold">{item.head}</h3>
           </div>
 
-          {index > 0 && index < FlowchartData.length && (
+          {index > 0 && index < data.length && (
             <div className="arrow w-8 h-0.5 bg-gray-400 absolute transform -translate-x-8 -translate-y-7"></div>
           )}
 
