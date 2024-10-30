@@ -32,7 +32,6 @@ const Flowchart = () => {
         </div>
       ))}
     </div>
-    </div>
   );
 };
 
