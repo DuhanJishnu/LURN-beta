@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
-import "./MainContent.css";  // Ensure this CSS file contains the star background CSS
-
+import "./MainContent.css";
+import LinkButton from "../Components/LinkButton.jsx";
 const MainContent = () => {
   return (
-    <section className="wrapper pt-20">
+    <section className="wrapper pt-20 sm:flex flex-auto -z-10 ">
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
@@ -14,21 +13,7 @@ const MainContent = () => {
               An Artificial Intelligence platform that helps you learn with the help of GAMES that are interactive and fresh. 
               We offer infinite learning resources for our users that help them learn and grow.
           </p>
-          <Link
-  to="/auth"
-  className="
-    bg-black text-white border border-black rounded-md w-fit text-xl
-    shadow-[4px_4px_0_0_white,4px_4px_0_1px_black] 
-    font-sans font-normal leading-5 px-10 py-3
-    inline-block cursor-pointer select-none 
-    hover:no-underline active:shadow-[2px_2px_0_0_white,2px_2px_0_1px_black]
-    active:translate-x-[2px] active:translate-y-[2px]
-    transition-all duration-200 ease-in-out
-  "
->
-  Start Learning
-</Link>
-
+          <LinkButton toPath="auth" text="Start Learning" />
         </div>
        <div className='text-xl sm:text-4xl text-left'>
           <h1 className='text-4xl'>LURN = {'{'}</h1>

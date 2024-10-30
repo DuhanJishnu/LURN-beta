@@ -8,8 +8,8 @@ body {
 
 .board,
 .card,
-.wrapper,
-.content {
+.wrapper_flashcard,
+.content_flashcard {
   transform-style: preserve-3d;
 }
 
@@ -33,7 +33,7 @@ body {
   }
 }
 
-.wrapper {
+.wrapper_flashcard {
   pointer-events: initial;
   display: block;
   position: relative;
@@ -42,7 +42,7 @@ body {
   transform-origin: 200% 50%;
 }
 
-.content {
+.content_flashcard {
   display: block;
   height: 100%;
   transition: all var(--duration);
@@ -81,11 +81,11 @@ body {
     }
   }
 
-  .wrapper {
+  .wrapper_flashcard {
     transform: rotateY(0.5turn);
   }
 
-  .content {
+  .content_flashcard {
     transform: rotateX(-0.5turn) rotateY(1.5turn);
   }
 }
