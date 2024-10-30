@@ -12,6 +12,7 @@ import Flashcards from "./pages/Flashcard.jsx";
 import Flowchart from "./pages/Flowchart.jsx";
 import Compare from "./pages/Compare.jsx";
 import SearchComponent from "./components/SearchNew.jsx";
+import MindMap from "./pages/MindMap.jsx";
 import "./index.css";
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
                     <Route path="/flowchart" element={<Flowchart />} />
                     <Route path="/compare" element={<Compare />} />
                     <Route path="/search" element={<SearchComponent />} />
+                    <Route path="/mindmap" element={<MindMap />} />
+                    <Route path="*" element={<h1>Not Found</h1>} />
                 </Routes>
             </div>
         </Router>

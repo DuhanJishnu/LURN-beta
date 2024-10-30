@@ -55,6 +55,40 @@ aiRouter.post("/quiz", async (c) => {
     }
 });
 
+aiRouter.post("/mindmap", async (c) => {
+    const body = await c.req.json();
+
+    const parsed = promptSchema.safeParse(body);
+
+    if (!parsed.success) {
+        return c.json(
+            {
+                message: "Wrong inputs",
+            },
+            400,
+        );
+    }
+
+    try {
+        // const full_prompt = `Create 10 mzq on ${body.data}. Each question should be dictionary with keys: "question_text" for the que "option_1" through "option_4" for each option "correct_option" specifying correct answer's key (like "option_1"). return a JSON list only with each question structured as dictionary. Use double quotes for all keys and ensure there are no extra spaces.`;
+ 
+        // const response = await ai(c, full_prompt);
+
+        // return c.json(response, 200);
+        return c.json([
+            {message: "Not implemented yet"}
+        ], 200);
+    } catch (error) {
+        console.error(error);
+        return c.json(
+            {
+                message: "Server Error",
+            },
+            500,
+        );
+    }
+});
+
 aiRouter.post("/compare", async (c) => {
     const body = await c.req.json();
 
