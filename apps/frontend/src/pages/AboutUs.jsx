@@ -14,7 +14,7 @@ const teamMembers = [
     
     description: `Mark is not only an experienced designer, but an enthusiastic design teacher and a passionate musician. With over 10 years of industry experience, Mark sees every new project as an opportunity to do something extraordinary.`,
     education: 'Bachelor of Technology (Mechanical Engineering) NIT Meghalaya',
-    img: '../../assets/Images/3.webp',
+    img: '../../assets/Images/Charity.webp',
   },
   {
     name: 'Shashank Umar Vaishy',
