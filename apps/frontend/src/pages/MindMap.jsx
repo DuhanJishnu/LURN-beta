@@ -17,10 +17,12 @@ const MindMap = () => {
     let edges = [];
 
     data.forEach((item, index) => {
-      // Position calculation for each node
+      // Calculate position for nodes in a radial layout
+      const angle = (index / data.length) * 2 * Math.PI; // Angle for the radial position
+      const radius = 150; // Radius from the parent node
       const position = {
-        x: pos.x + (index - (data.length - 1) / 2) * 200,  // Adjust horizontal spacing
-        y: pos.y + level * 150,  // Vertical spacing based on level
+        x: pos.x + radius * Math.cos(angle),
+        y: pos.y + radius * Math.sin(angle),
       };
 
       // Add node to nodes array
@@ -49,15 +51,13 @@ const MindMap = () => {
 
       // Recursively generate child nodes and edges
       if (item.children && item.children.length > 0) {
-        const childPos = { x: position.x, y: position.y + 150 };
         const childNodesAndEdges = generateMindMap(
           mindMapData.filter(node => item.children.includes(node.id)),
           item.id,
           level + 1,
-          childPos
+          position // Use current node's position as the new center
         );
 
-        // Concatenate child nodes and edges to current arrays
         nodes = nodes.concat(childNodesAndEdges.nodes);
         edges = edges.concat(childNodesAndEdges.edges);
       }
@@ -85,9 +85,13 @@ const MindMap = () => {
 
       <style jsx>{`
         .custom-controls button {
-          background-color: black !important;
+          background-color: #444 !important;  /* Dark gray for visibility */
           color: white !important;
-          border: 1px solid white;
+          border: 1px solid white !important;
+        }
+        .custom-controls button:hover {
+          background-color: #666 !important; /* Slightly lighter on hover */
+          color: white !important;
         }
       `}</style>
     </div>
