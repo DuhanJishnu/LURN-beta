@@ -126,7 +126,7 @@ authRoutes.post("/signin", async (c) => {
         console.error(error);
         return c.json(
             {
-                message: "Error creating User",
+                message: "Error",
             },
             500,
         );
