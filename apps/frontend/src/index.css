@@ -83,3 +83,11 @@ canvas {
 .animate-spinner {
   animation: spinner-16s03x 2s infinite;
 }
+
+/* Background wrappers */
+.wrapper_red {
+  height: 100vh;
+  width:fit-content;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #351b1b 0%, #0f0a09 100%);
+}

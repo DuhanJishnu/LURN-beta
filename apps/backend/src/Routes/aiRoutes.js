@@ -104,7 +104,7 @@ aiRouter.post("/compare", async (c) => {
     }
 
     try {
-        const full_prompt = `compare ${body.data}. Return array of size > 10 that contains objects with "key1" as 'category' having only 2 possible values the name of objects to be compared and key2 as 'value' having values the comparison values. don't write names of category in comparison data and keep concise`;
+        const full_prompt = `compare ${body.data} Return array (json obj) of size > 10 that contains objects with first key as "category" having only 2 possible values the name of objects to be compared and second key as 'value' having values the comparison values. don't write names of category in comparison data and keep concise`;
  
         const response = await ai(c, full_prompt);
 
