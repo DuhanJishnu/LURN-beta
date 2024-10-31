@@ -118,13 +118,13 @@ export default function Sidebar({ children }) {
                                    </div>
                               </nav>
                          </aside>
-                         <div className="w-full h-[60px] top-0 right-0 md:hidden shadow-lg z-50 bg-transparent fixed">
-                         <button
+                         <div className="w-full h-[60px]  top-0 right-0 md:hidden flex items-center  shadow-lg z-50 bg-transparent fixed">
+                         <button 
                               onClick={() => {
                                    setShowSidebar((curr) => !curr);
                                    setExpanded(true);
                               }}
-                              className="fixed top-5 right-5 md:hidden p-2 bg-white rounded-full shadow-lg z-50"
+                              className="fixed md:hidden p-2 bg-white ml-2 rounded-lg shadow-lg z-50"
                          >
                               <Menu size={24} />
                          </button>

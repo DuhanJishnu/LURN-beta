@@ -31,7 +31,7 @@ function App() {
   
 
   return (
-    <div className="wrapper -z-30">
+    <div className="wrapper -z-30 min-w-[100vw] w-fit">
       <div id="stars" ></div>
       <div id="stars2" ></div>
       

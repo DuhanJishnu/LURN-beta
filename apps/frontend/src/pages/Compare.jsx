@@ -7,15 +7,12 @@ const Compare = () => {
   const [items, setItems] = useState(CompareData);
   const [droppedItems, setDroppedItems] = useState({});
 
-  // Extract unique categories
   const categories = [...new Set(CompareData.map((item) => item.category))];
 
-  // Handle drag start
   const onDragStart = (e, item) => {
     e.dataTransfer.setData("item", JSON.stringify(item));
   };
 
-  // Handle drop
   const onDrop = (e, targetCategory) => {
     const item = JSON.parse(e.dataTransfer.getData("item"));
 
@@ -30,9 +27,8 @@ const Compare = () => {
   };
 
   return (
-    <div className="main bg-black h-screen text-stone-50 p-4">
-      {/* Top draggable items */}
-      <div className="flex flex-wrap place-items-center mb-8">
+    <div className="main pt-20 bg-black h-screen text-stone-50 p-4">
+      <div className="flex flex-wrap place-items-center justify-center mb-8">
         {items.map((item) => (
           <div className="p-2 inline-block" key={item.value}>
             <div
@@ -46,7 +42,6 @@ const Compare = () => {
         ))}
       </div>
 
-      {/* Dynamic category drop areas */}
       <div className="flex space-x-4">
         {categories.map((category) => (
           <div
