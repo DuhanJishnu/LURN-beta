@@ -77,6 +77,10 @@ authRoutes.post("/signin", async (c) => {
     }).$extends(withAccelerate());
     const body = await c.req.json();
 
+    if (!c.env.DATABASE_URL) {
+        return new Response("DATABASE_URL not defined", { status: 500 });
+      }
+
     const parsed = SignInUserSchema.safeParse(body);
     if (!parsed.success) {
         return c.json(
