@@ -19,7 +19,7 @@ const SearchBar = ({setSearch, submitHandler}) => {
             type="text"
             placeholder="Message LURN"
             className={`bg-[#0f1421] text-gray-400 h-10 outline-none transition-all duration-300 ease-in-out ${
-              isFocused ? "w-[500px]" : "w-60"
+              isFocused ? "w-60 sm:w-[500px]" : "w-32 sm:w-60"
             } px-4 py-1 rounded-[15px]`}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
