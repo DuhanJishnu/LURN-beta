@@ -80,33 +80,38 @@ const MobileFlash = ({data}) => {
   const toggleAnswer = () => setShowAnswer((prev) => !prev);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+    <div className="flex space-x-4 items-center justify-center min-h-screen bg-black text-white">
+      
+      <div className="z-0 arrow-left flex mt-6 space-x-4">
+        <button
+          className=" px-4 py-2 bg-red-600 hover:bg-red-700 rounded-md"
+          onClick={prevCard}
+        >
+          <i className="arrow left"></i>
+        </button>
+        </div>
+
       <div
-        className={`relative w-80 h-48 bg-blue-500 text-center rounded-lg shadow-lg transition-transform duration-500 ${
+        className={`relative z-0 aspect-[20/29] h-[300px] bg-gradient-to-br from-red-200 to-green-200 text-center rounded-3xl drop-shadow-2xl transition-transform duration-500 ${
           showAnswer ? "rotate-y-180" : ""
         }`}
         onClick={toggleAnswer}
       >
         <div className={`absolute w-full h-full p-4 flex items-center justify-center backface-hidden ${showAnswer ? "hidden" : "block"}`}>
-          <p className="text-lg">{data[currentCard].q}</p>
+          <p className="text-lg text-red-900 font-bold drop-shadow-2xl">{data[currentCard].q}</p>
         </div>
         <div className={`absolute w-full h-full p-4 flex items-center justify-center backface-hidden transform rotate-y-180 ${showAnswer ? "block" : "hidden"}`}>
-          <p className="text-lg">{data[currentCard].a}</p>
+          <p className="text-lg text-green-900 font-bold drop-shadow-2xl">{data[currentCard].a}</p>
         </div>
       </div>
 
-      <div className="flex mt-6 space-x-4">
+      
+      <div className="z-0 arrow-right flex mt-6 space-x-4">
         <button
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md"
-          onClick={prevCard}
-        >
-          Previous
-        </button>
-        <button
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md"
+          className=" px-4 py-2 bg-green-600 hover:bg-green-700 rounded-md"
           onClick={nextCard}
         >
-          Next
+          <i className="arrow right"></i>
         </button>
       </div>
     </div>

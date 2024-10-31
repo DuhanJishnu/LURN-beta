@@ -1,5 +1,5 @@
 import React from "react";
-import "../Components/MainContent.css"; 
+import "../Components/NightSky.css"; 
 
 const teamMembers = [
   {
@@ -31,19 +31,18 @@ function App() {
   
 
   return (
-    <div className="wrapper">
-      <div id="stars" className="-z-10"></div>
-      <div id="stars2" className="-z-10"></div>
-      <div id="stars3" className="-z-10"></div>
+    <div className="wrapper -z-30 min-w-[100vw] w-fit">
+     
+      
       <div className="pt-20">
-        <div className="flex flex-wrap justify-center text-3xl text-white font-bold">Our Team</div>
+        <div className="flex flex-wrap justify-center text-3xl text-white font-bold ">Our Team</div>
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-24 h-fit py-10 ">
+      <div className="flex flex-wrap justify-center items-center gap-24 h-fit py-10 -z-20">
         {teamMembers.map((item, index) => (
           <div
             key={index}
             
-            className="w-[300px] h-[400px] group overflow-hidden  relative rounded-[40px] transition-all duration-700 hover:shadow-[0_4px_30px_rgba(255,255,255,1)] hover:-translate-y-3 transform"
+            className="w-[300px] h-[400px] group overflow-hidden z-0  relative rounded-[40px] transition-all duration-700 hover:shadow-[0_4px_30px_rgba(255,255,255,1)] hover:-translate-y-3 transform"
           >
             <img
               src={item.img}

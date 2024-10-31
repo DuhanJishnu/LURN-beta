@@ -56,10 +56,7 @@ const NavLinks = styled.div`
 
 
 
-const Logo = styled.div`
-    font-size: 1.5rem;
-    font-weight: bold;
-`;
+
 
 const Header = () => {
 
@@ -104,7 +101,7 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     </div>
     :
     <Nav>
-      <Logo>Logo</Logo>
+      <a href="/"><img to="/auth" src="../../assets/Images/logo.png" alt="logo" className="rounded-full w-10 h-10" /></a> 
       <NavLinks>
         <a href="/" className='text-vsgreen hover:text-vsred'>Home</a>
         <a href="/vision" className='text-vscyan hover:text-vsred'>Our Vision</a>

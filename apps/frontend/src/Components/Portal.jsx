@@ -2,115 +2,50 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
-const Container = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
-    color: white;
-    font-family: "Courier New", Courier, monospace;
-`;
 
-const FormWrapper = styled.div`
-
+const FormWrapper = styled.div` 
   text-align: center;
-  max-width: 400px;
-  width: 100%;
-    
-
-
---border-angle: 0turn; 
+  width: 30vmax; /* Default width: 30% of the larger viewport dimension */
+min-width: 300px;
+z-index:0;
+  --border-angle: 0turn; 
   --main-bg: conic-gradient(
-      from var(--border-angle),
-      black,
-      black 0.3%,
-      black 60%,
-      black 95%
-    );
-  
+    from var(--border-angle),
+    black,
+    black 0.3%,
+    black 60%,
+    black 95%
+  );
+
   border: solid 3px transparent;
   border-radius: 2em;
   --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, white, black 100%, transparent);
   
   background: 
-   
     var(--main-bg) padding-box,
     var(--gradient-border) border-box, 
     var(--main-bg) border-box;
   
   background-position: center center;
-
   animation: bg-spin 3s linear infinite;
+  
   @keyframes bg-spin {
     to {
       --border-angle: 1turn;
     }
   }
-}
 
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0turn;
-}
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
 
-
-
+  /* Set width to 400px when the screen width is more than 900px */
+  @media (min-width: 900px) {
+    width: 400px;
+  }
 `;
-
-const Logo = styled.div`
-    background-color: white;
-    color: black;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 2rem auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-`;
-
-const Input = styled.input`
-    background-color: black;
-    color: white;
-    border: 2px solid white;
-    border-radius: 5px;
-    padding: 0.5rem;
-    width: 100%;
-    margin: 1rem 0;
-    font-size: 1.2rem;
-`;
-
-const ContinueButton = styled(Link)`
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    width: 100%;
-    margin-top: 1.5rem;
-    cursor: pointer;
-    font-weight: bold;
-
-    &:hover {
-        background-color: #019374;
-    }
-`;
-
-const GoBack = styled.a`
-    display: block;
-    margin-top: 1rem;
-    color: #00b894;
-    cursor: pointer;
-
-    &:hover {
-        text-decoration: underline;
-    }
-`;
-
 const ErrorMessage = styled.div`
     display: block;
     margin-top: 1rem;
@@ -154,32 +89,43 @@ const SignIn = ({setLogin}) => {
         }
     };
     return (
-        <Container>
-            <FormWrapper className="px-[2rem] sm:px-[4rem] ">
-                <Logo>Logo</Logo>
-                <h2>Sign in to your account</h2>
-                <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Create account here</Link></u></h3>
-                <Input
-                    type="email"
-                    placeholder="Email"
-                    onChange={(e) => {
-                        setEmail(e.target.value);
-                    }}
-                />
-                <Input
-                    type="password"
-                    placeholder="Password"
-                    onChange={(e) => {
-                        setPassword(e.target.value);
-                    }}
-                />
-                <button className="mt-5 bg-[#00b894] p-1 rounded-md  hover:bg-[#00b855]" onClick={onclickHandler}>
-                    Continue
-                </button>
-                <GoBack href="/">Go Back</GoBack>
-                <ErrorMessage>{errorMessage}</ErrorMessage>
-            </FormWrapper>
-        </Container>
+        <div className="flex justify-center items-center min-h-screen h-fit bg-black text-white font-mono">
+        
+
+<FormWrapper className="mt-[4rem]  px-[2rem] sm:px-[4rem] py-[1rem] pt-[2rem]">
+<div className="bg-white text-black rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center font-bold text-xl">
+  <img src="../../assets/Images/logo.png" alt="image" className="rounded-full" />
+</div>
+
+    <h2>Sign in to your account</h2>
+    <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Create account here</Link></u></h3>
+    <input
+  type="email"
+  placeholder="Email"
+  className="bg-black text-white border-2 border-white rounded-md p-2 w-full my-4 text-lg"
+  onChange={(e) => setEmail(e.target.value)}
+/>
+<input
+  type="password"
+  placeholder="Password"
+  className="bg-black text-white border-2 border-white rounded-md p-2 w-full my-4 text-lg"
+  onChange={(e) => setPassword(e.target.value)}
+/>
+
+                <button
+                className="mt-5 bg-white font-bold text-black p-1 rounded-md transition-colors duration-200 hover:bg-[#13871b] hover:text-white"
+                onClick={onclickHandler}
+            >
+                Continue
+            </button>
+            <a href="/" className="block mt-4  text-[#00b894] cursor-pointer hover:underline">
+                    Go Back
+                </a>
+    <ErrorMessage>{errorMessage}</ErrorMessage>
+</FormWrapper>
+
+        </div>
+       
     );
 };
 
@@ -219,39 +165,46 @@ const SignUp = () => {
         }
     };
     return (
-        <Container>
-            <FormWrapper>
-                <Logo>Logo</Logo>
+        <div class="flex justify-center items-center min-h-screen h-fit bg-black text-white font-mono">
+  <FormWrapper>
+                <div className="bg-white text-black rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center font-bold text-xl">
+                <img src="../../assets/Images/logo.png" alt="image" className="rounded-full" />
+                </div>
                 <h2>Create your account</h2>
                 <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Login here</Link></u></h3>
-                <Input
-                    type="username"
-                    placeholder="Username"
-                    onChange={(e) => {
-                        setUsername(e.target.value);
-                    }}
-                />
-                <Input
-                    type="email"
-                    placeholder="Email"
-                    onChange={(e) => {
-                        setEmail(e.target.value);
-                    }}
-                />
-                <Input
-                    type="password"
-                    placeholder="Password"
-                    onChange={(e) => {
-                        setPassword(e.target.value);
-                    }}
-                />
-                <button className="mt-5 bg-[#00b894] p-1 rounded-md hover:bg-[#00b855]" onClick={onclickHandler}>
-                    Continue
-                </button>
-                <GoBack href="/">Go Back</GoBack>
+                <input
+          type="username"
+          placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
+          className="bg-black text-white border-2 border-white rounded-md p-2 w-full my-4 text-lg"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+          className="bg-black text-white border-2 border-white rounded-md p-2 w-full my-4 text-lg"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          className="bg-black text-white border-2 border-white rounded-md p-2 w-full my-4 text-lg"
+        />
+               <button
+                className="mt-5 bg-white text-black p-1 font-bold rounded-md transition-colors duration-200 hover:bg-[#13871b] hover:text-white"
+                onClick={onclickHandler}
+            >
+                Continue
+            </button>
+                
+                <a href="/" className="block mt-4 text-[#00b894] cursor-pointer hover:underline">
+                    Go Back
+                </a>
                 <ErrorMessage>{errorMessage}</ErrorMessage>
             </FormWrapper>
-        </Container>
+</div>
+            
+       
     );
 };
 

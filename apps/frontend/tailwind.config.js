@@ -7,10 +7,17 @@ export default {
   theme: {
     fontFamily:{
       'courier_new': ['Courier Prime', 'monospace'],
+      minecraft:['Tiny5', 'sans-serif'],
+      baloo:['"Baloo Bhai 2"', 'sans-serif'],
+      curs:['"Playwrite GB S"', 'sans-serif']
     },
     extend: {
-      
-
+      backdropBlur: {
+        'custom': '8px',
+      },
+      aspectRatio: {
+        '20/29': '20 / 29',
+      },
       colors:{
         'vsyellow': '#fac863' ,
         'vsskyblue': '#0484dc',

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import "../Components/NightSky.css"; 
 const Quiz = () => {
   const location = useLocation();
   const questions = location.state?.data;
@@ -38,18 +38,18 @@ const Quiz = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-[#212121] text-white p-6">
+    <div className="flex flex-col wrapper min-h-[100vh] h-fit min-w-[100vw] w-fit items-center justify-center  p-6">
       {!quizCompleted ? (
-        <div className="bg-[#0B3C73] p-10 rounded-lg shadow-lg w-full max-w-3xl text-center">
-          <h2 className="text-2xl font-bold mb-6 text-white border border-[#0A2463] p-4 rounded-lg">
+        <div className=" p-10 rounded-lg  shadow-lg w-full max-w-3xl text-center mt-4 shadow-black shadow-lg">
+          <h2 className="text-2xl  mb-6 text-white border border-[#0A2463] p-4 rounded-full font-baloo">
             {currentQuestion.question_text}
           </h2>
           <div className="grid grid-cols-2 gap-4">
             {['option_1', 'option_2', 'option_3', 'option_4'].map((option, index) => (
               <button
                 key={index}
-                className={`p-4 rounded-lg text-xl text-white border-2 border-[#0A2463] hover:bg-[#064287] transition-colors ${
-                  selectedOption === option ? 'bg-[#0A72B1]' : 'bg-[#0B3C73]'
+                className={`p-4 font-baloo rounded-full text-xl text-white border border-[#0A2463] hover:shadow-md hover:shadow-black transition-colors ${
+                  selectedOption === option ? 'shadow-md shadow-black bg-green-600' : ''
                 }`}
                 onClick={() => handleOptionClick(option)}
               >
@@ -58,7 +58,7 @@ const Quiz = () => {
             ))}
           </div>
           <button
-            className="mt-8 bg-[#0A72B1] hover:bg-[#064287] p-4 rounded-lg text-xl"
+            className="mt-8 hover:bg-orange-100 hover:text-black p-4 px-7r rounded-full border border-[#0A2463] text-white font-baloo  text-xl hover:shadow-md hover:shadow-black transition-colors"
             onClick={handleNextQuestion}
             disabled={!selectedOption}
           >

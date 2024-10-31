@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 
 const SearchBar = ({setSearch, submitHandler}) => {
     const handleKeyDown = (e) => {
@@ -6,17 +6,29 @@ const SearchBar = ({setSearch, submitHandler}) => {
           submitHandler(); 
         }
     };
-
+    const [isFocused, setIsFocused] = useState(false);
     return (
-        <div className="flex items-center bg-[#2f2f2f] p-2 rounded-full mt-20">
-            <input
-                type="text"
-                className="z-0 bg-transparent w-full outline-none text-gray-200 px-4 placeholder-white"
-                placeholder="Message LURN"
-                onChange={(e) => setSearch(e.target.value)}
-                onKeyDown={handleKeyDown}
-            />
-            <button className="z-0 flex justify-center items-center bg-gray-700 hover:bg-gray-600 p-2 rounded-full ml-2"
+        <div className="flex items-center space-x-4 w-fit shadow-lg shadow-black bg-[#182139] p-2 border-solid border-[#353c51] border-[0.5px] rounded-[25px] transition-all duration-300 ease-in-out">
+          {/* Icon */}
+          {/* <div className="bg-gradient-to-r from-pink-500 to-purple-500 rounded-full p-1">
+            <span className="w-5 h-5 block"></span>
+          </div> */}
+          
+          {/* Search Input */}
+          <input
+            type="text"
+            placeholder="Message LURN"
+            className={`bg-[#0f1421] text-gray-400 h-10 outline-none transition-all duration-300 ease-in-out ${
+              isFocused ? "w-[500px]" : "w-60"
+            } px-4 py-1 rounded-[15px]`}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+          
+          {/* Microphone Icon */}
+          <button className="z-5 flex justify-center items-center bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 p-2 rounded-full ml-2"
                 onClick={submitHandler}
             >
                 <svg
@@ -24,7 +36,7 @@ const SearchBar = ({setSearch, submitHandler}) => {
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="2"
-                    stroke="currentColor"
+                    stroke="white"
                     className="w-5 h-5 text-gray-400"
                 >
                     <path
@@ -34,8 +46,9 @@ const SearchBar = ({setSearch, submitHandler}) => {
                     />
                 </svg>
             </button>
+
         </div>
-    );
+      );
 };
 
 export default SearchBar;

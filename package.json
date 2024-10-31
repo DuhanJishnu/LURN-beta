@@ -27,8 +27,7 @@
     "packages/*"
   ],
   "dependencies": {
-    "@syncfusion/ej2-data": "^27.1.52",
-    "@syncfusion/ej2-react-diagrams": "^27.1.57",
-    "react-flow-renderer": "^10.3.17"
+    "react-flow-renderer": "^10.3.17",
+    "sass": "^1.80.5"
   }
 }
