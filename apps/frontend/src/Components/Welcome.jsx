@@ -59,19 +59,20 @@ const Welcome = () => {
     }
 
     return (
-        <div className="overflow-hidden relative h-screen w-full  bg-[#212121] text-center ">
-           
-            <div className="p-2 sm:p-20">
+        <div className="wrapper overflow-hidden relative h-screen w-full  text-center ">
+            <div className="p-2 sm:pt-20 pb-10" >
                 <TypewriterPage text={"Welcome to Learning Page"} />
-                <SearchBar setSearch={setSearch} submitHandler={submitHandler} />
+            </div>
+            <div className="flex flex-col items-center">
+            <SearchBar className="block" setSearch={setSearch} submitHandler={submitHandler} />
                 {
                     (regenerate)?
                         <LoadingText onClick={regenerateHandler}>Regenerate</LoadingText>
                     :
                         <LoadingText>{loading? "Generating........": ""}</LoadingText>
-                }
-                <Carousel setOption={setOption}/>
+                }                
             </div>
+            <Carousel setOption={setOption}/>
         </div>
     );
 };

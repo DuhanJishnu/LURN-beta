@@ -12,6 +12,9 @@ export default {
       curs:['"Playwrite GB S"', 'sans-serif']
     },
     extend: {
+      backdropBlur: {
+        'custom': '8px',
+      },
       aspectRatio: {
         '20/29': '20 / 29',
       },
