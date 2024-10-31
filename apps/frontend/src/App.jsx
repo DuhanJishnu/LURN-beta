@@ -11,7 +11,7 @@ import Quiz from "./pages/Quiz.jsx";
 import Flashcards from "./pages/Flashcard.jsx";
 import Flowchart from "./pages/Flowchart.jsx";
 import Compare from "./pages/Compare.jsx";
-import MindMap from "./pages/MindMap.jsx";
+import MindMap from "./pages/MindMap.tsx";
 import "./index.css";
 
 function App() {
