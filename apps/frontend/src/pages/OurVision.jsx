@@ -1,5 +1,5 @@
 import React from "react";
-import "../Components/MainContent.css"; 
+import "../Components/NightSky.css"; 
 
 const OurVision = () => {
     return <div className="wrapper h-[100vh]">

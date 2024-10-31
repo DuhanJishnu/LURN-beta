@@ -11,53 +11,50 @@ const Container = styled.div`
     color: white;
     font-family: "Courier New", Courier, monospace;
 `;
-
-const FormWrapper = styled.div`
-
+const FormWrapper = styled.div` 
   text-align: center;
-  max-width: 400px;
-  width: 100%;
-    
-
-
---border-angle: 0turn; 
+  width: 30vmax; /* Default width: 30% of the larger viewport dimension */
+min-width: 300px;
+z-index:0;
+  --border-angle: 0turn; 
   --main-bg: conic-gradient(
-      from var(--border-angle),
-      black,
-      black 0.3%,
-      black 60%,
-      black 95%
-    );
-  
+    from var(--border-angle),
+    black,
+    black 0.3%,
+    black 60%,
+    black 95%
+  );
+
   border: solid 3px transparent;
   border-radius: 2em;
   --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, white, black 100%, transparent);
   
   background: 
-   
     var(--main-bg) padding-box,
     var(--gradient-border) border-box, 
     var(--main-bg) border-box;
   
   background-position: center center;
-
   animation: bg-spin 3s linear infinite;
+  
   @keyframes bg-spin {
     to {
       --border-angle: 1turn;
     }
   }
-}
 
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0turn;
-}
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
 
-
-
+  /* Set width to 400px when the screen width is more than 900px */
+  @media (min-width: 900px) {
+    width: 400px;
+  }
 `;
+
 
 const Logo = styled.div`
     background-color: white;
@@ -85,9 +82,9 @@ const Input = styled.input`
 `;
 
 const ContinueButton = styled(Link)`
-    color: white;
+    color: black;
     padding: 1rem 2rem;
-    border: none;
+    border: 2px solid black;
     border-radius: 25px;
     font-size: 1.2rem;
     width: 100%;
@@ -155,7 +152,7 @@ const SignIn = ({setLogin}) => {
     };
     return (
         <Container>
-            <FormWrapper className="px-[2rem] sm:px-[4rem] ">
+            <FormWrapper className="mt-[2rem]  px-[2rem] sm:px-[4rem] py-[1rem] pt-[2rem]">
                 <Logo>Logo</Logo>
                 <h2>Sign in to your account</h2>
                 <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Create account here</Link></u></h3>
@@ -173,7 +170,7 @@ const SignIn = ({setLogin}) => {
                         setPassword(e.target.value);
                     }}
                 />
-                <button className="mt-5 bg-[#00b894] p-1 rounded-md  hover:bg-[#00b855]" onClick={onclickHandler}>
+                <button className="mt-5 bg-[white] p-1 rounded-md  hover:bg-green font-bold text-[black]" onClick={onclickHandler}>
                     Continue
                 </button>
                 <GoBack href="/">Go Back</GoBack>

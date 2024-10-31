@@ -1,4 +1,4 @@
-import "./MainContent.css";
+import "./NightSky.css";
 import LinkButton from "../Components/LinkButton.jsx";
 const MainContent = () => {
   return (
@@ -8,7 +8,7 @@ const MainContent = () => {
       <div id="stars3"></div>
       <div className="z-0 grid grid-cols-1 sm:grid-cols-2 place-items-center h-[100%`] pl-4 sm:pl-[5rem] text-white font-courier_new">
         <div className="grid place-content-center max-w-full sm:max-w-[70%] sm:leading-loose pb-10">
-          <h1 className='text-3xl sm:text-7xl'>Introducing LURN</h1>
+          <h1 className='text-3xl sm:text-7xl font-minecraft'>Introducing LURN</h1>
           <p className=' z-0 m-10 sm:text-[1.2rem]'>
               An Artificial Intelligence platform that helps you learn with the help of GAMES that are interactive and fresh. 
               We offer infinite learning resources for our users that help them learn and grow.

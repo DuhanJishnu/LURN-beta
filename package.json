@@ -27,6 +27,7 @@
     "packages/*"
   ],
   "dependencies": {
-    "react-flow-renderer": "^10.3.17"
+    "react-flow-renderer": "^10.3.17",
+    "sass": "^1.80.5"
   }
 }
