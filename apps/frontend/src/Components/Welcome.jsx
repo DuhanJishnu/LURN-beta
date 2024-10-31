@@ -59,7 +59,7 @@ const Welcome = () => {
     }
 
     return (
-        <div className="wrapper overflow-hidden relative h-screen w-full  text-center ">
+        <div className="wrapper relative min-h-[100vh] h-fit min-w-[100vw] w-fit text-center ">
             <div className="p-2 sm:pt-20 pb-10" >
                 <TypewriterPage text={"Welcome to Learning Page"} />
             </div>
@@ -69,7 +69,7 @@ const Welcome = () => {
                     (regenerate)?
                         <LoadingText onClick={regenerateHandler}>Regenerate</LoadingText>
                     :
-                        <LoadingText>{loading? "Generating........": ""}</LoadingText>
+                        <LoadingText>{loading? "Generating....": ""}</LoadingText>
                 }                
             </div>
             <Carousel setOption={setOption}/>

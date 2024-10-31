@@ -112,13 +112,13 @@ const SignIn = ({setLogin}) => {
   onChange={(e) => setPassword(e.target.value)}
 />
 
-<button
+                <button
                 className="mt-5 bg-white font-bold text-black p-1 rounded-md transition-colors duration-200 hover:bg-[#13871b] hover:text-white"
                 onClick={onclickHandler}
             >
                 Continue
             </button>
-    <a href="/" className="block mt-4  text-[#00b894] cursor-pointer hover:underline">
+            <a href="/" className="block mt-4  text-[#00b894] cursor-pointer hover:underline">
                     Go Back
                 </a>
     <ErrorMessage>{errorMessage}</ErrorMessage>
