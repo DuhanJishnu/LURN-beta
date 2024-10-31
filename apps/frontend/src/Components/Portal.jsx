@@ -94,7 +94,7 @@ const SignIn = ({setLogin}) => {
 
 <FormWrapper className="mt-[4rem]  px-[2rem] sm:px-[4rem] py-[1rem] pt-[2rem]">
 <div className="bg-white text-black rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center font-bold text-xl">
-  Logo
+  <img src="../../assets/Images/logo.png" alt="image" className="rounded-full" />
 </div>
 
     <h2>Sign in to your account</h2>
@@ -112,10 +112,13 @@ const SignIn = ({setLogin}) => {
   onChange={(e) => setPassword(e.target.value)}
 />
 
-    <button className="mt-5 bg-[white] p-1 rounded-md  hover:bg-green font-bold text-[black]" onClick={onclickHandler}>
-        Continue
-    </button>
-    <a href="/" class="block mt-4 text-[#00b894] cursor-pointer hover:underline">
+<button
+                className="mt-5 bg-white font-bold text-black p-1 rounded-md transition-colors duration-200 hover:bg-[#13871b] hover:text-white"
+                onClick={onclickHandler}
+            >
+                Continue
+            </button>
+    <a href="/" className="block mt-4  text-[#00b894] cursor-pointer hover:underline">
                     Go Back
                 </a>
     <ErrorMessage>{errorMessage}</ErrorMessage>
@@ -165,7 +168,7 @@ const SignUp = () => {
         <div class="flex justify-center items-center min-h-screen h-fit bg-black text-white font-mono">
   <FormWrapper>
                 <div className="bg-white text-black rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center font-bold text-xl">
-                Logo
+                <img src="../../assets/Images/logo.png" alt="image" className="rounded-full" />
                 </div>
                 <h2>Create your account</h2>
                 <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Login here</Link></u></h3>
@@ -187,9 +190,12 @@ const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="bg-black text-white border-2 border-white rounded-md p-2 w-full my-4 text-lg"
         />
-                <button className="mt-5 bg-[#00b894] p-1 rounded-md hover:bg-[#00b855]" onClick={onclickHandler}>
-                    Continue
-                </button>
+               <button
+                className="mt-5 bg-white text-black p-1 font-bold rounded-md transition-colors duration-200 hover:bg-[#13871b] hover:text-white"
+                onClick={onclickHandler}
+            >
+                Continue
+            </button>
                 
                 <a href="/" className="block mt-4 text-[#00b894] cursor-pointer hover:underline">
                     Go Back

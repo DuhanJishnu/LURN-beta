@@ -32,8 +32,8 @@ function App() {
 
   return (
     <div className="wrapper -z-30 min-w-[100vw] w-fit">
-      <div id="stars" ></div>
-      <div id="stars2" ></div>
+      {/* <div id="stars" ></div>
+      <div id="stars2" ></div> */}
       
       <div className="pt-20">
         <div className="flex flex-wrap justify-center text-3xl text-white font-bold ">Our Team</div>
