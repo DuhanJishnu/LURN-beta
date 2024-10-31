@@ -8,15 +8,15 @@ const SearchBar = ({setSearch, submitHandler}) => {
     };
 
     return (
-        <div className="flex items-center bg-[#2f2f2f] p-2 rounded-full mt-20">
+        <div className="z-5 flex items-center bg-[#2f2f2f] p-2 rounded-full mt-20">
             <input
                 type="text"
-                className="z-0 bg-transparent w-full outline-none text-gray-200 px-4 placeholder-white"
+                className="z-1 bg-transparent w-full outline-none text-gray-200 px-4 placeholder-white"
                 placeholder="Message LURN"
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyDown={handleKeyDown}
             />
-            <button className="z-0 flex justify-center items-center bg-gray-700 hover:bg-gray-600 p-2 rounded-full ml-2"
+            <button className="z-5 flex justify-center items-center bg-gray-700 hover:bg-gray-600 p-2 rounded-full ml-2"
                 onClick={submitHandler}
             >
                 <svg
