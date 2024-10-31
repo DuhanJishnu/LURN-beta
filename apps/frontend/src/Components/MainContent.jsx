@@ -2,7 +2,7 @@ import "./NightSky.css";
 import LinkButton from "../Components/LinkButton.jsx";
 const MainContent = () => {
   return (
-    <section className="z-0 wrapper pt-20 sm:flex flex-auto">
+    <section className="z-0 wrapper pt-20 sm:flex flex-auto ">
      <div id="stars"></div>
       <div id="stars2"></div>
       
