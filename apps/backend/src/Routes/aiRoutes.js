@@ -135,7 +135,7 @@ aiRouter.post("/flowchart", async (c) => {
     }
 
     try {
-        const full_prompt = `I want to perform a task related to ${body.data}. Please generate an array of steps I need to follow, where each element of the array is a string representing a single step. Only return the array, no explanations or additional information. Each step should be concise and clear`;
+        const full_prompt = `Wanna perform task related to ${body.data}. Generate array of steps I need to follow, where each element of the array is object, key is 'head' containing heading for single step and 'desc' with description of heading . Only return the array(json obj). Each step should be concise, clear`;
  
         const response = await ai(c, full_prompt);
 
