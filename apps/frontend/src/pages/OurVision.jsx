@@ -3,10 +3,10 @@ import "../Components/NightSky.css";
 
 const OurVision = () => {
     return (
-      <div className="wrapper">
+      <div className="wrapper h-screen">
       <div id="stars"></div>
       <div id="stars2"></div>
-      <div id="stars3"></div>
+      
       </div>
   );
 };

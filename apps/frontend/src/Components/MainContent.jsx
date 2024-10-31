@@ -3,9 +3,9 @@ import LinkButton from "../Components/LinkButton.jsx";
 const MainContent = () => {
   return (
     <section className="z-0 wrapper pt-20 sm:flex flex-auto">
-      <div id="stars"></div>
+     <div id="stars"></div>
       <div id="stars2"></div>
-      <div id="stars3"></div>
+      
 
       <div className="z-0 grid grid-cols-1 sm:grid-cols-2 place-items-center h-[100%`] pl-4 sm:pl-[5rem] text-white font-courier_new">
         <div className="grid place-content-center max-w-full sm:max-w-[70%] sm:leading-loose pb-10">
