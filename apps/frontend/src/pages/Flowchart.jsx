@@ -8,7 +8,7 @@ const Flowchart = () => {
 
   return (
     <div className="flowchart-container h-screen flex items-center justify-center space-x-8 relative p-10">
-      {FlowchartData.map((item, index) => (
+      {data.map((item, index) => (
         <div
           key={index} 
           className="relative group"

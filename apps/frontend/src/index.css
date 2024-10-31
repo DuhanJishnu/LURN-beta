@@ -64,3 +64,22 @@ canvas {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }
+
+/* Loader Css */
+@keyframes spinner-16s03x {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50%, 80% {
+    transform: rotateY(-180deg);
+  }
+  90%, 100% {
+    opacity: 0;
+    transform: rotateY(-180deg);
+  }
+}
+
+/* Custom animation classes */
+.animate-spinner {
+  animation: spinner-16s03x 2s infinite;
+}

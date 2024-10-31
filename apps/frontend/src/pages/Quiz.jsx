@@ -39,7 +39,6 @@ const Quiz = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-[#212121] text-white p-6">
-      <CanvasBackground />
       {!quizCompleted ? (
         <div className="bg-[#0B3C73] p-10 rounded-lg shadow-lg w-full max-w-3xl text-center">
           <h2 className="text-2xl font-bold mb-6 text-white border border-[#0A2463] p-4 rounded-lg">
