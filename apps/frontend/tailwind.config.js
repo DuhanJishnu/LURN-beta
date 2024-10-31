@@ -9,8 +9,9 @@ export default {
       'courier_new': ['Courier Prime', 'monospace'],
     },
     extend: {
-      
-
+      aspectRatio: {
+        '20/29': '20 / 29',
+      },
       colors:{
         'vsyellow': '#fac863' ,
         'vsskyblue': '#0484dc',

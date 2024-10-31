@@ -16,9 +16,10 @@
     font-weight: 300;
     font-size: 50px;
     letter-spacing: 10px;
-    margin-top: -60px;
+    transform: translateY(-50%);
     padding-left: 10px;
 }
+
 
 #title span {
     background: -webkit-linear-gradient(white, #38495a);

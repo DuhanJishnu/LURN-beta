@@ -39,3 +39,18 @@ body{
     transform: rotateY(180deg);
   }
   
+  .arrow {
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
