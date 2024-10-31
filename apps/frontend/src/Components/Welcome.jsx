@@ -5,7 +5,7 @@ import TypewriterPage from "./TypeWrite.jsx";
 import SearchBar from "./SearchBar.jsx";
 import Carousel from "./Carousel.jsx";
 
-const Generate = styled.a`
+const LoadingText = styled.a`
     display: block;
     margin-top: 1rem;
     color: white;
@@ -16,16 +16,6 @@ const Generate = styled.a`
     }
 `;
 
-const ReGenerate = styled.a`
-    display: block;
-    margin-top: 1rem;
-    color: white;
-    cursor: pointer;
-
-    &:hover {
-        text-decoration: underline;
-    }
-`;
 
 const Welcome = () => {
     const navigate = useNavigate();
@@ -76,9 +66,9 @@ const Welcome = () => {
                 <SearchBar setSearch={setSearch} submitHandler={submitHandler} />
                 {
                     (regenerate)?
-                        <Generate onClick={regenerateHandler}>Regenerate</Generate>
+                        <LoadingText onClick={regenerateHandler}>Regenerate</LoadingText>
                     :
-                        <ReGenerate>{loading? "Generating........": ""}</ReGenerate>
+                        <LoadingText>{loading? "Generating........": ""}</LoadingText>
                 }
                 <Carousel setOption={setOption}/>
             </div>
