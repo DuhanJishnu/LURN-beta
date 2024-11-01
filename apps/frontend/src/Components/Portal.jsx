@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-
+import logo from '../../assets/Images/logo.svg';
 
 const FormWrapper = styled.div` 
   text-align: center;
@@ -94,7 +94,7 @@ const SignIn = ({setLogin}) => {
 
 <FormWrapper className="mt-[4rem]  px-[2rem] sm:px-[4rem] py-[1rem] pt-[2rem]">
 <div className="bg-white text-black rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center font-bold text-xl">
-  <img src="../../assets/Images/logo.png" alt="image" className="rounded-full" />
+  <img src={logo} alt="image" className="rounded-full" />
 </div>
 
     <h2>Sign in to your account</h2>
@@ -168,7 +168,7 @@ const SignUp = () => {
         <div class="flex justify-center items-center min-h-screen h-fit bg-black text-white font-mono">
   <FormWrapper>
                 <div className="bg-white text-black rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center font-bold text-xl">
-                <img src="../../assets/Images/logo.png" alt="image" className="rounded-full" />
+                <img src={logo} alt="image" className="rounded-full" />
                 </div>
                 <h2>Create your account</h2>
                 <h3>or <u><Link onClick={()=>setLogin((e)=>!e)}>Login here</Link></u></h3>

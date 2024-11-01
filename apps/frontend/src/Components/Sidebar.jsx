@@ -7,7 +7,7 @@ import {
 import { useContext, createContext, useState, useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import AuthButton from './AuthButton';
-
+import logo from '../../assets/Images/logo.svg';
 const SidebarContext = createContext();
 
 export default function Sidebar({ children }) {
@@ -28,11 +28,11 @@ export default function Sidebar({ children }) {
                     <nav className="pt-20 h-full w-fit flex flex-col">
                          <div className="p-4 pb-2 flex justify-center md:justify-between items-center">
                               <img
-                                   src={'../../assets/Images/logo.png'}
+                                   src={logo}
                                    className={`overflow-hidden rounded-full w-16 transition-all ${
                                         expanded ? 'w-32' : 'w-0'
                                    }`}
-                                   alt="schoolLogo"
+                                   alt="LURN_Logo"
                               />
                          </div>
 

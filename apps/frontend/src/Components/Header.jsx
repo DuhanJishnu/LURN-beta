@@ -5,6 +5,7 @@ import { SidebarItem } from './Sidebar';
 import { Baby, EyeClosed, Layers, MailCheck, PersonStanding, Search, Users } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import AuthButton from "./AuthButton"
+import logo from '../../assets/Images/logo.svg';
 
 const Nav = styled.nav`
     display: flex;
@@ -101,7 +102,7 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     </div>
     :
     <Nav>
-      <a href="/"><img to="/auth" src="../../assets/Images/logo.png" alt="logo" className="rounded-full w-10 h-10" /></a> 
+      <a href="/"><img to="/auth" src={logo} alt="logo" className="bg-white rounded-full w-10 h-10" /></a> 
       <NavLinks>
         <a href="/" className='text-vsgreen hover:text-vsred'>Home</a>
         <a href="/vision" className='text-vscyan hover:text-vsred'>Our Vision</a>
