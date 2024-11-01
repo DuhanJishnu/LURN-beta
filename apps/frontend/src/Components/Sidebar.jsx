@@ -29,7 +29,7 @@ export default function Sidebar({ children }) {
                          <div className="p-4 pb-2 flex justify-center md:justify-between items-center">
                               <img
                                    src={logo}
-                                   className={`overflow-hidden rounded-full w-16 transition-all ${
+                                   className={`bg-white overflow-hidden rounded-full w-16 transition-all ${
                                         expanded ? 'w-32' : 'w-0'
                                    }`}
                                    alt="LURN_Logo"
