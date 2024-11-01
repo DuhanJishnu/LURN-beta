@@ -17,6 +17,7 @@ export default {
       },
       aspectRatio: {
         '20/29': '20 / 29',
+        '3/4' : '3 / 4',
       },
       colors:{
         'vsyellow': '#fac863' ,

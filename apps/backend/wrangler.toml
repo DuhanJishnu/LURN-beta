@@ -1,4 +1,4 @@
-name = "backend"
+name = "gamify-app-backend"
 main = "src/index.js"
 compatibility_date = "2024-10-19"
 compatibility_flags = [ "nodejs_compat" ]

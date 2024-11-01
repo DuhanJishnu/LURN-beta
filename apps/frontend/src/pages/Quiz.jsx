@@ -41,7 +41,7 @@ const Quiz = () => {
     <div className="flex flex-col wrapper min-h-[100vh] h-fit min-w-[100vw] w-fit items-center justify-center  p-6">
       {!quizCompleted ? (
         <div className=" p-10 rounded-lg  shadow-lg w-full max-w-3xl text-center mt-4 shadow-black shadow-lg">
-          <h2 className="text-2xl  mb-6 text-white border border-[#0A2463] p-4 rounded-full font-baloo">
+          <h2 className="text-2xl  mb-6 text-white  p-4 rounded-full font-baloo">
             {currentQuestion.question_text}
           </h2>
           <div className="grid grid-cols-2 gap-4">
