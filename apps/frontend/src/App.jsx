@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import MainContent from "./components/MainContent.jsx";
-import Portal from "./components/Portal.jsx";
-import Welcome from "./components/Welcome.jsx";
+import Header from "./Components/Header";
+import MainContent from "./Components/MainContent.jsx";
+import Portal from "./Components/Portal.jsx";
+import Welcome from "./Components/Welcome.jsx";
 import OurVision from "./pages/OurVision.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -11,7 +11,7 @@ import Quiz from "./pages/Quiz.jsx";
 import Flashcards from "./pages/Flashcard.jsx";
 import Flowchart from "./pages/Flowchart.jsx";
 import Compare from "./pages/Compare.jsx";
-import MindMap from "./pages/MindMap.jsx";
+import MindMap from "./pages/MindMap.tsx";
 import "./index.css";
 
 function App() {

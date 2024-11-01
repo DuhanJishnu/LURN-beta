@@ -86,8 +86,8 @@ const Welcome = () => {
     };
 
     return (
-        <div className="wrapper overflow-hidden relative h-screen w-full text-center">
-            <div className="p-2 sm:pt-20 pb-10">
+        <div className="wrapper z-0 overflow-hidden relative h-screen w-full text-center">
+            <div className="p-2 pt-20 pb-10">
                 <TypewriterPage text={"Welcome to Learning Page"} />
             </div>
             <div className="flex flex-col items-center">

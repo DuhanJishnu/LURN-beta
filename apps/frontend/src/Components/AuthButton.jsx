@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const Button = styled(Link)`
@@ -34,10 +34,9 @@ const Button = styled(Link)`
 
 const AuthButton = ()=>{
     const url = useLocation();
-    const navigate = useNavigate();
+
     const logoutHandler = () => {
         localStorage.removeItem("token");
-        navigate('/auth');
     }
     return <>
         {
@@ -45,9 +44,9 @@ const AuthButton = ()=>{
                 <div></div> 
             :
                 (localStorage.getItem("token"))? 
-                    <Button onClick={logoutHandler}>Log Out</Button>
+                    <Button to={"auth"} onClick={logoutHandler}>Log Out</Button>
                 :
-                    <Button to="/auth">Sign Up</Button>
+                    <Button to={"auth"}>Sign Up</Button>
         }
     </>
 }

@@ -42,12 +42,12 @@ function App() {
           <div
             key={index}
             
-            className="w-[300px] h-[400px] group overflow-hidden z-0  relative rounded-[40px] transition-all duration-700 hover:shadow-[0_4px_30px_rgba(255,255,255,1)] hover:-translate-y-3 transform"
+            className="h-[400px] aspect-3/4 group overflow-hidden z-0  relative rounded-[40px] transition-all duration-700 hover:shadow-[0_4px_30px_rgba(255,255,255,1)] hover:-translate-y-3 transform"
           >
             <img
               src={item.img}
               alt={item.name}
-              className="w-full h-full transition-all duration-300 ease-in-out rounded-[40px]"
+              className="w-[300px] h-[400px] object-cover transition-all duration-300 ease-in-out rounded-[40px]"
             />
             <div className="absolute bottom-[-100%] left-0 w-full text-center text-white bg-black bg-opacity-60 py-2 transition-all duration-700 ease-in-out group-hover:bottom-0">
               <div className="text-2xl font-bold">{item.name}</div>
