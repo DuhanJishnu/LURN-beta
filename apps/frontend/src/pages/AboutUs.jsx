@@ -7,21 +7,21 @@ const teamMembers = [
     
     description: `Director and founding partner of Studio Alto, Andrew has over 10 years experience in Australia and the UK. He has worked with a broad spectrum of clients, ranging from multi-national corporations to local and sustainable initiatives.`,
     education: 'Bachelor of Technology (Computer Science) NIT Meghalaya',
-    img: '../../assets/Images/jishnu.webp',
+    img: 'https://res.cloudinary.com/dwfwy8udp/image/upload/v1730438382/Lurn-assets/qot4gukb7vgofdwyrcjo.webp',
   },
   {
     name: 'Charity Rymbai',
     
     description: `Mark is not only an experienced designer, but an enthusiastic design teacher and a passionate musician. With over 10 years of industry experience, Mark sees every new project as an opportunity to do something extraordinary.`,
     education: 'Bachelor of Technology (Mechanical Engineering) NIT Meghalaya',
-    img: '../../assets/Images/Charity.webp',
+    img: 'https://res.cloudinary.com/dwfwy8udp/image/upload/v1730438382/Lurn-assets/gebacv2tqqqodsijjx8r.webp',
   },
   {
     name: 'Shashank Umar Vaishy',
     
     description: `Part visual communicator, part adventurer, Eunice sees the world through a slightly different lens. Originally hailing from Hong Kong’s South East Asia, she has settled into Studio Alto.`,
     education: 'Bachelor of Technology (Computer Science) NIT, Meghalaya',
-    img: '../../assets/Images/Shashank.webp',
+    img: 'https://res.cloudinary.com/dwfwy8udp/image/upload/v1730438383/Lurn-assets/p8rejfre8vb8vahcifxw.webp',
   }
 ];
 
