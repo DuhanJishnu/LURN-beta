@@ -1,6 +1,8 @@
 .wrapper {
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
     width:fit-content;
+    min-width:100vw;
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
