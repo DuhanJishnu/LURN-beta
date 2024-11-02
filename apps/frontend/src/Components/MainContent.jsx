@@ -6,7 +6,6 @@ const MainContent = () => {
      <div id="stars"></div>
       <div id="stars2"></div>
       
-
       <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center h-[100%`] pl-4 sm:pl-[5rem] text-white font-courier_new">
         <div className="z-0 grid place-content-center max-w-full sm:max-w-[70%] sm:leading-loose pb-10">
           <h1 className='text-6xl font-minecraft sm:text-7xl'>Introducing LURN</h1>
